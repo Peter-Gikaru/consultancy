@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, Compass } from 'lucide-react';
+import { Compass, Menu, X, ShieldCheck, ArrowRight } from 'lucide-react';
+import { siteData } from '@/config/siteData';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,132 +12,144 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Our Expertise', href: '/expertise' },
-    { name: 'Our Impact', href: '/impact' },
-    { name: 'Work With Us', href: '/contact' },
+    { name: 'Services', href: '/services' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' }
   ];
 
-  const isActive = (path) => {
-    if (path === '/' && pathname === '/') return true;
-    if (path !== '/' && pathname.startsWith(path)) return true;
-    return false;
-  };
-
   return (
-    <header className="header-nav">
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
+    <header style={{
+      position: 'sticky',
+      top: 0,
+      zIndex: 100,
+      backgroundColor: 'rgba(253, 248, 245, 0.92)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid var(--border-light)',
+      transition: 'all 0.3s ease'
+    }}>
+      <div className="container" style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        height: '80px'
+      }}>
         {/* Brand Logo */}
-        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           <div style={{
             width: '40px',
             height: '40px',
-            borderRadius: '8px',
-            backgroundColor: '#E6A817',
+            borderRadius: '10px',
+            backgroundColor: 'var(--bg-blush)',
+            border: '1px solid var(--border-accent)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#1E1E1E',
-            fontWeight: 'bold'
+            color: 'var(--accent-terracotta)'
           }}>
-            <Compass size={24} />
+            <Compass size={22} />
           </div>
           <div>
             <span style={{
               fontFamily: 'var(--font-lora)',
-              fontSize: '1.4rem',
+              fontSize: '1.25rem',
               fontWeight: '700',
-              color: '#1E1E1E',
-              letterSpacing: '-0.02em',
+              color: 'var(--text-main)',
+              letterSpacing: '-0.01em',
               display: 'block',
-              lineHeight: 1
+              lineHeight: 1.1
             }}>
-              Built on Site
+              {siteData.siteInfo.brandName}
             </span>
-            <span style={{
-              fontSize: '0.75rem',
-              color: '#1E7B4A',
-              fontWeight: '600',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em'
-            }}>
-              Technical Assistance
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-subtle)', fontWeight: '500' }}>
+              Project Evaluation & Advisory
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav style={{ display: 'none', alignItems: 'center', gap: '8px' }} className="desktop-nav">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`nav-link ${isActive(link.href) ? 'active' : ''}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link href="/contact" className="btn btn-primary btn-sm" style={{ marginLeft: '12px' }}>
-            Get in Touch <ArrowRight size={16} />
-          </Link>
+        {/* Desktop Navigation Links */}
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="desktop-only">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`nav-link ${isActive ? 'active' : ''}`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '8px',
-            color: '#1E1E1E'
-          }}
-          className="mobile-toggle"
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* CTA Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <Link href="/contact" className="btn btn-primary btn-sm desktop-only">
+            Book Conversation <ArrowRight size={16} />
+          </Link>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+            style={{
+              display: 'none',
+              background: 'none',
+              border: 'none',
+              color: 'var(--text-main)',
+              cursor: 'pointer',
+              padding: '8px'
+            }}
+            className="mobile-toggle"
+          >
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div style={{
-          backgroundColor: '#FFFFFF',
-          borderBottom: '1px solid #E2E8F0',
-          padding: '16px 24px 24px',
+          backgroundColor: 'var(--bg-card)',
+          borderBottom: '1px solid var(--border-light)',
+          padding: '24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px'
+          gap: '20px',
+          animation: 'fadeUpStagger 0.25s ease forwards'
         }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`nav-link ${isActive(link.href) ? 'active' : ''}`}
-              style={{ fontSize: '1.1rem', padding: '12px' }}
+              style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: pathname === link.href ? 'var(--accent-terracotta)' : 'var(--text-main)',
+                textDecoration: 'none'
+              }}
             >
               {link.name}
             </Link>
           ))}
+
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="btn btn-primary"
-            style={{ marginTop: '8px', width: '100%', justifyContent: 'center' }}
+            style={{ width: '100%', marginTop: '12px' }}
           >
-            Get in Touch <ArrowRight size={16} />
+            Book Conversation <ArrowRight size={18} />
           </Link>
         </div>
       )}
 
-      <style jsx>{`
-        @media (min-width: 769px) {
-          :global(.desktop-nav) {
-            display: flex !important;
-          }
-          :global(.mobile-toggle) {
-            display: none !important;
-          }
+      {/* Responsive Styles for Mobile Toggle */}
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          .desktop-only { display: none !important; }
+          .mobile-toggle { display: block !important; }
         }
       `}</style>
     </header>

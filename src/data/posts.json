@@ -1,0 +1,53 @@
+[
+  {
+    "id": "kenya-health-2026",
+    "title": "Strengthening County Health Supply Chains in Kenya",
+    "category": "Health Systems",
+    "author": "Dr. Amina Omondi, Nairobi Hub Lead",
+    "date": "August 2026",
+    "summary": "We partnered with the Ministry of Health to optimize last-mile pharmaceutical logistics across 10 counties, reducing clinic stock-outs by 40%.",
+    "content": "Our resident technical assistance team worked directly inside county health executive offices to establish real-time digital inventory tracking. By connecting rural dispensaries with central medical stores, we cut stock-out duration for essential maternal medicines from 45 days to under 6 days.",
+    "mediaType": "image",
+    "mediaUrl": "/images/kenya-health-case.jpg",
+    "impactMetric": "40% Reduction in Stock-Outs",
+    "highlights": [
+      "12 County Health Departments Operationalized",
+      "Real-Time Digital Supply Chain Dashboard Implemented",
+      "80% Recommendation Adoption by Parliaments"
+    ]
+  },
+  {
+    "id": "climate-finance-2026",
+    "title": "Direct Climate Adaptation Finance for Pastoralist Communities",
+    "category": "Climate & Resilience",
+    "author": "Kwame Mensah, Adaptation Finance Advisor",
+    "date": "July 2026",
+    "summary": "Directing international climate adaptation funds to community-led pastoralist groups increases project longevity by 40%.",
+    "content": "In partnership with county climate change committees, Built on Site designed localized risk transfer mechanisms and community-managed water retention funds in Northern Kenya and Ethiopia. This decentralized governance structure ensured 92% of funds reached target pastoralist households directly.",
+    "mediaType": "image",
+    "mediaUrl": "/images/climate-project.jpg",
+    "impactMetric": "$40M+ Local Adaptation Funds Mobilized",
+    "highlights": [
+      "$40M Mobilized for Local Adaptation Funds",
+      "92% Direct Community Fund Pass-Through",
+      "Co-created Arid Land Resilience Framework"
+    ]
+  },
+  {
+    "id": "policy-reform-2026",
+    "title": "Co-Designing Kenya's National Social Protection Policy",
+    "category": "Policy & Governance",
+    "author": "Grace Wambui, Senior Policy Analyst",
+    "date": "June 2026",
+    "summary": "Providing embedded legal and economic drafting assistance to line ministries to expand social safety net coverage.",
+    "content": "Over 18 months, our resident policy team embedded within the Ministry of Labour and Social Protection to co-draft legislative frameworks and cash transfer guidelines targeting vulnerable households across Kenya.",
+    "mediaType": "image",
+    "mediaUrl": "/images/policy-meeting.jpg",
+    "impactMetric": "80% Legislative Adoption Rate",
+    "highlights": [
+      "Expanded Cash Transfer Guidelines to 47 Counties",
+      "De-risked Public Financial Management Reforms",
+      "Provided Legislative Drafting Assistance"
+    ]
+  }
+]

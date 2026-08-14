@@ -1,358 +1,351 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Handshake,
-  BarChart3,
-  MapPin,
-  FileText,
-  Heart,
-  Trees,
+  LifeBuoy,
+  ShieldAlert,
+  Users,
+  FileCheck,
   ArrowRight,
-  ShieldCheck,
-  Building2,
+  CheckCircle2,
   Calendar
 } from 'lucide-react';
-
-export const metadata = {
-  title: 'Built on Site - Smart Technical Assistance for Government Reform in Africa',
-  description: 'We embed local teams, deliver evidence-based policy, and drive sustainable impact across Africa. Explore our smart TA approach built for the Kenyan market and beyond.',
-};
+import VerticalSpotlightCarousel from '@/components/VerticalSpotlightCarousel';
+import InteractiveHeroScorecard from '@/components/InteractiveHeroScorecard';
+import RotatingHeroHeadline from '@/components/RotatingHeroHeadline';
+import RadialGaugeMetric from '@/components/RadialGaugeMetric';
+import ScrollReveal from '@/components/ScrollReveal';
+import { siteData } from '@/config/siteData';
+import { mediaStore } from '@/utils/mediaStore';
 
 export default function HomePage() {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    const loadStories = async () => {
+      let serverPosts = [];
+      try {
+        const res = await fetch('/api/posts');
+        const data = await res.json();
+        if (data.success) serverPosts = data.posts;
+      } catch (e) {
+        // static fallback
+      }
+
+      const custom = mediaStore.getCustomPosts();
+      const combinedServerCustom = [...custom, ...serverPosts];
+
+      const formattedPosts = combinedServerCustom.map((post) => ({
+        id: post.id,
+        title: post.title,
+        clientType: `${post.category} • ${post.author}`,
+        impactMetric: post.impactMetric || 'Verified Outcome',
+        image: post.mediaUrl || post.image || '/images/policy-meeting.jpg',
+        alt: post.title,
+        failureScenario: post.summary,
+        scaryMoment: post.content ? post.content.substring(0, 140) + '...' : post.summary,
+        outcome: post.highlights && post.highlights[0] ? post.highlights[0] : post.summary
+      }));
+
+      const defaultStories = siteData.scarsStories || [];
+      const allStories = [...formattedPosts, ...defaultStories];
+      const activeStories = mediaStore.filterActiveItems(allStories, 'id', 'image');
+      setStories(activeStories);
+    };
+
+    loadStories();
+    if (typeof window !== 'undefined') {
+      window.addEventListener('meridian_store_change', loadStories);
+      return () => window.removeEventListener('meridian_store_change', loadStories);
+    }
+  }, []);
+
+  const iconMap = {
+    LifeBuoy: LifeBuoy,
+    ShieldAlert: ShieldAlert,
+    Users: Users,
+    FileCheck: FileCheck
+  };
+
   return (
     <>
-      {/* Hero Section */}
-      <section style={{
-        position: 'relative',
-        minHeight: '85vh',
-        display: 'flex',
-        alignItems: 'center',
-        background: 'linear-gradient(rgba(30, 30, 30, 0.78), rgba(30, 30, 30, 0.85)), url("/images/hero-kenya.jpg") center/cover no-repeat',
-        color: '#FFFFFF',
-        padding: '100px 24px 80px'
-      }}>
-        <div className="container">
-          <div style={{ maxWidth: '820px' }} className="animate-fade-in">
-            {/* Tagline Badge */}
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: 'rgba(230, 168, 23, 0.2)',
-              border: '1px solid #E6A817',
-              color: '#E6A817',
-              padding: '6px 14px',
-              borderRadius: '20px',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              marginBottom: '24px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              <ShieldCheck size={16} /> Embedded Technical Assistance & Evaluation
+      <section
+        className="section"
+        style={{
+          position: 'relative',
+          padding: '24px 24px 40px',
+          backgroundColor: 'var(--bg-canvas)',
+          overflow: 'hidden'
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            right: '1%',
+            width: '140px',
+            pointerEvents: 'none',
+            zIndex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+          className="desktop-only"
+        >
+          <svg
+            viewBox="0 0 140 1000"
+            preserveAspectRatio="none"
+            style={{ width: '100%', height: '100%', opacity: 0.35 }}
+          >
+            <path
+              d="M 10,0 C 130,330 130,670 10,1000"
+              fill="none"
+              stroke="var(--accent-terracotta)"
+              strokeWidth="4"
+              strokeDasharray="8 4"
+            />
+            <path
+              d="M 25,0 C 145,330 145,670 25,1000"
+              fill="none"
+              stroke="var(--accent-terracotta)"
+              strokeWidth="1.5"
+              opacity="0.5"
+            />
+          </svg>
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="grid-2" style={{ alignItems: 'center', gap: '40px' }}>
+            <div className="animate-fade-up">
+              <RotatingHeroHeadline />
+
+              <p className="lead" style={{ marginBottom: '32px', color: 'var(--text-muted)' }}>
+                {siteData.heroConfig.subheadline}
+              </p>
+
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+                <Link href={siteData.heroConfig.ctaPrimaryLink} className="btn btn-primary" style={{ padding: '16px 32px' }}>
+                  {siteData.heroConfig.ctaPrimaryText} <ArrowRight size={18} />
+                </Link>
+                <Link href={siteData.heroConfig.ctaSecondaryLink} className="btn btn-outline" style={{ padding: '16px 28px' }}>
+                  {siteData.heroConfig.ctaSecondaryText}
+                </Link>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '20px',
+                paddingTop: '20px',
+                borderTop: '1px solid var(--border-light)'
+              }}>
+                <RadialGaugeMetric
+                  percentage={100}
+                  label="Unbiased Advisory"
+                  color="var(--accent-terracotta)"
+                />
+                <RadialGaugeMetric
+                  percentage={94}
+                  label="On-Time Recovery"
+                  color="var(--accent-forest)"
+                />
+              </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="hero-headline" style={{ marginBottom: '24px' }}>
-              Policy that Works Where It’s Built.
-            </h1>
-
-            {/* Subheadline */}
-            <p className="lead" style={{ color: '#F9F9F9', opacity: 0.95, fontSize: '1.25rem', marginBottom: '36px', maxWidth: '720px' }}>
-              Technical assistance that’s embedded, politically informed, and built in partnership with local communities. From Nairobi to the region, we deliver lasting government reform.
-            </p>
-
-            {/* CTAs */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '48px' }}>
-              <Link href="/expertise" className="btn btn-primary" style={{ padding: '16px 32px', fontSize: '1.05rem' }}>
-                Explore Smart TA <ArrowRight size={18} />
-              </Link>
-              <Link href="/impact" className="btn btn-secondary" style={{ padding: '16px 32px', fontSize: '1.05rem' }}>
-                View Our Impact
-              </Link>
-            </div>
-
-            {/* Trust Indicator */}
-            <div style={{
-              borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-              paddingTop: '24px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              color: '#E2E8F0',
-              fontSize: '0.95rem'
-            }}>
-              <Building2 size={20} color="#E6A817" />
-              <span>
-                <strong>Trusted Partner:</strong> Ministries of Health, Education, and Finance across 12 African countries.
-              </span>
+            <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <VerticalSpotlightCarousel />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Highlights Section */}
-      <section className="section" style={{ backgroundColor: '#FFFFFF' }}>
+      <section className="section section-blush">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-            <h2 style={{ color: '#1E1E1E', marginBottom: '16px' }}>
-              Impact That Lasts. Stories That Matter.
-            </h2>
-            <p style={{ color: '#4A5568', fontSize: '1.1rem' }}>
-              Over the past 20 years, we've helped transform public policy across Africa. Here's what that looks like on the ground.
-            </p>
-          </div>
-
-          <div className="grid-3">
-            {/* Card 1 */}
-            <div className="card">
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(30, 123, 74, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '20px',
-                color: '#1E7B4A'
-              }}>
-                <Handshake size={28} />
-              </div>
-              <div className="stat-number">70%</div>
-              <p style={{ fontWeight: '500', color: '#1E1E1E', fontSize: '1.05rem', lineHeight: 1.5, margin: 0 }}>
-                70% of our projects are locally-led, ensuring solutions are owned by the communities they serve.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="card">
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(217, 90, 43, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '20px',
-                color: '#D95A2B'
-              }}>
-                <BarChart3 size={28} />
-              </div>
-              <div className="stat-number">100+</div>
-              <p style={{ fontWeight: '500', color: '#1E1E1E', fontSize: '1.05rem', lineHeight: 1.5, margin: 0 }}>
-                100+ government reforms supported across East Africa, from social protection to climate resilience.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="card">
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(42, 92, 122, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '20px',
-                color: '#2A5C7A'
-              }}>
-                <MapPin size={28} />
-              </div>
-              <div className="stat-number">15</div>
-              <p style={{ fontWeight: '500', color: '#1E1E1E', fontSize: '1.05rem', lineHeight: 1.5, margin: 0 }}>
-                15 permanent field offices across the continent, including Nairobi, Accra, and Kigali.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Teaser Section */}
-      <section className="section" style={{ backgroundColor: '#F9F9F9' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '20px' }}>
-            <div>
-              <span style={{ color: '#1E7B4A', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.875rem' }}>
-                Practice Areas
-              </span>
-              <h2 style={{ marginTop: '8px', marginBottom: 0 }}>Our Expertise. Your Transformation.</h2>
-            </div>
-            <Link href="/expertise" className="btn btn-outline">
-              See all our expertise <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="grid-3">
-            {/* Block 1 */}
-            <Link href="/expertise#policy" style={{ textDecoration: 'none' }}>
-              <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#E6A817', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1E1E1E', marginBottom: '20px' }}>
-                    <FileText size={24} />
-                  </div>
-                  <h3 style={{ color: '#1E1E1E', fontSize: '1.35rem', marginBottom: '12px' }}>Policy & Governance</h3>
-                  <p style={{ color: '#4A5568', fontSize: '0.975rem', lineHeight: 1.6 }}>
-                    We co-design inclusive policies with ministries to ensure they are evidence-based, politically feasible, and administratively sustainable.
-                  </p>
-                </div>
-                <div style={{ marginTop: '20px', color: '#1E7B4A', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  Explore Sector <ArrowRight size={16} />
-                </div>
-              </div>
-            </Link>
-
-            {/* Block 2 */}
-            <Link href="/expertise#health" style={{ textDecoration: 'none' }}>
-              <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#1E7B4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', marginBottom: '20px' }}>
-                    <Heart size={24} />
-                  </div>
-                  <h3 style={{ color: '#1E1E1E', fontSize: '1.35rem', marginBottom: '12px' }}>Health & Social Protection</h3>
-                  <p style={{ color: '#4A5568', fontSize: '0.975rem', lineHeight: 1.6 }}>
-                    From immunization campaigns to cash transfer programs, we strengthen delivery systems that reliably reach the most vulnerable populations.
-                  </p>
-                </div>
-                <div style={{ marginTop: '20px', color: '#1E7B4A', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  Explore Sector <ArrowRight size={16} />
-                </div>
-              </div>
-            </Link>
-
-            {/* Block 3 */}
-            <Link href="/expertise#climate" style={{ textDecoration: 'none' }}>
-              <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#D95A2B', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', marginBottom: '20px' }}>
-                    <Trees size={24} />
-                  </div>
-                  <h3 style={{ color: '#1E1E1E', fontSize: '1.35rem', marginBottom: '12px' }}>Climate & Resilience</h3>
-                  <p style={{ color: '#4A5568', fontSize: '0.975rem', lineHeight: 1.6 }}>
-                    We help governments build climate-resilient infrastructure, structure adaptation finance, and protect vulnerable communities against shocks.
-                  </p>
-                </div>
-                <div style={{ marginTop: '20px', color: '#1E7B4A', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  Explore Sector <ArrowRight size={16} />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach Section */}
-      <section className="section" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container">
-          <div className="grid-2" style={{ alignItems: 'center' }}>
-            <div>
-              <span style={{ color: '#D95A2B', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.875rem' }}>
-                Our Methodology
-              </span>
-              <h2 style={{ marginTop: '8px', marginBottom: '24px', fontSize: '2.25rem' }}>
-                Built on Site. Not Flown In.
+          <div className="grid-2" style={{ alignItems: 'center', gap: '48px' }}>
+            <ScrollReveal>
+              <h2 style={{ fontSize: '2.5rem', marginTop: '8px', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
+                {siteData.homeIntro.title}
               </h2>
-              <p style={{ fontSize: '1.05rem', color: '#333333', lineHeight: 1.7, marginBottom: '20px' }}>
-                We reject the "fly-in, fly-out" model of traditional international consulting. Our teams are embedded within partner ministries and local organizations, providing political, economic, and social context that off-the-shelf solutions miss.
+              <p className="lead" style={{ margin: '0 0 24px' }}>
+                {siteData.homeIntro.leadText}
               </p>
-              <p style={{ fontSize: '1.05rem', color: '#333333', lineHeight: 1.7, marginBottom: '32px' }}>
-                We build enduring trust, transfer technical skills directly to civil servants, and ensure that policy reforms outlast project timelines and election cycles.
-              </p>
-              <Link href="/expertise" className="btn btn-primary">
-                Learn about our Smart TA approach <ArrowRight size={18} />
-              </Link>
-            </div>
-
-            <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
-              <Image
-                src="/images/team-meeting.jpg"
-                alt="Team meeting to develop a new health policy in Nairobi, Kenya"
-                width={800}
-                height={550}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                background: 'linear-gradient(transparent, rgba(30,30,30,0.9))',
-                padding: '24px',
-                color: '#FFFFFF'
-              }}>
-                <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#E6A817' }}>Embedded Teams in Action</span>
-                <p style={{ margin: '4px 0 0', fontSize: '0.95rem', color: '#E2E8F0' }}>
-                  Co-designing national health financing structures with local stakeholders in Nairobi.
-                </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {siteData.homeIntro.pillars.map((pillar, idx) => (
+                  <ScrollReveal key={idx} delay={idx * 100}>
+                    <div className="card" style={{ padding: '20px 24px' }}>
+                      <h3 style={{ fontSize: '1.15rem', marginBottom: '6px', color: 'var(--accent-terracotta)' }}>
+                        {pillar.title}
+                      </h3>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.5 }}>
+                        {pillar.description}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                ))}
               </div>
-            </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <InteractiveHeroScorecard />
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Latest Updates / News Section */}
-      <section className="section" style={{ backgroundColor: '#F9F9F9' }}>
+      <section className="section" style={{ backgroundColor: 'var(--bg-canvas)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 48px' }}>
-            <h2 style={{ marginBottom: '12px' }}>From the Field</h2>
-            <p style={{ color: '#4A5568' }}>Insights, project announcements, and policy briefs from our teams across Africa.</p>
-          </div>
+          <ScrollReveal>
+            <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 56px' }}>
+              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
+                {siteData.servicesConfig.overviewTitle}
+              </h2>
+              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+                We evaluate, stabilize, and optimize high-stakes projects across construction, tech, and enterprise change.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid-2">
-            {/* Card 1 */}
-            <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-              <div style={{ height: '240px', position: 'relative' }}>
-                <Image
-                  src="/images/kenya-health-case.jpg"
-                  alt="County health supply chain project in Kenya"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div style={{ padding: '28px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#718096', fontSize: '0.85rem', marginBottom: '12px' }}>
-                  <Calendar size={14} /> August 2026 • Kenya Policy Brief
-                </div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: '#1E1E1E' }}>
-                  New Project: Strengthening County Health Systems in Kenya
-                </h3>
-                <p style={{ color: '#4A5568', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
-                  We are partnering with the Ministry of Health to improve supply chain management across 10 counties, ensuring essential medicines reach rural clinics without delay.
-                </p>
-                <Link href="/impact" style={{ fontWeight: '600', color: '#1E7B4A' }}>
-                  Read project details →
-                </Link>
-              </div>
-            </div>
+            {siteData.servicesConfig.serviceList.map((service, idx) => {
+              const IconComp = iconMap[service.iconName] || LifeBuoy;
+              return (
+                <ScrollReveal key={service.id} delay={idx * 120}>
+                  <div className="card">
+                    <div className="card-icon-wrapper" style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '12px',
+                      backgroundColor: 'var(--bg-blush)',
+                      color: 'var(--accent-terracotta)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '20px'
+                    }}>
+                      <IconComp size={24} />
+                    </div>
 
-            {/* Card 2 */}
-            <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-              <div style={{ height: '240px', position: 'relative' }}>
-                <Image
-                  src="/images/climate-project.jpg"
-                  alt="Climate finance project for local communities"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div style={{ padding: '28px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#718096', fontSize: '0.85rem', marginBottom: '12px' }}>
-                  <Calendar size={14} /> July 2026 • Research Brief
-                </div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: '#1E1E1E' }}>
-                  Policy Brief: Climate Finance for Local Communities
-                </h3>
-                <p style={{ color: '#4A5568', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
-                  Our latest evaluation shows that directing international climate adaptation finance to local community actors increases long-term project resilience by 40%.
-                </p>
-                <Link href="/impact" style={{ fontWeight: '600', color: '#1E7B4A' }}>
-                  Read policy brief →
-                </Link>
-              </div>
-            </div>
+                    <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--text-main)' }}>
+                      {service.title}
+                    </h3>
+
+                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--accent-forest)', marginBottom: '14px' }}>
+                      {service.tagline}
+                    </div>
+
+                    <p style={{ fontSize: '1.025rem', marginBottom: '24px', lineHeight: 1.6 }}>
+                      {service.description}
+                    </p>
+
+                    <Link href={`/services#${service.id}`} className="btn btn-outline btn-sm">
+                      View Full Scope <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      <section className="section section-blush">
+        <div className="container">
+          <ScrollReveal>
+            <div style={{ maxWidth: '750px', margin: '0 auto 56px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
+                The Pivot Point: How We Fixed Derailed Projects
+              </h2>
+              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+                Here is how real project recovery happens.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid-2">
+            {stories.map((story, idx) => (
+              <ScrollReveal key={story.id} delay={idx * 150}>
+                <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
+                  <div style={{ position: 'relative', height: '220px', width: '100%' }}>
+                    <Image
+                      src={story.image}
+                      alt={story.alt}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                    <div style={{
+                      position: 'absolute',
+                      top: '16px',
+                      left: '16px',
+                      backgroundColor: 'rgba(38, 35, 34, 0.85)',
+                      backdropFilter: 'blur(8px)',
+                      color: '#FDF8F5',
+                      padding: '6px 14px',
+                      borderRadius: '20px',
+                      fontSize: '0.8rem',
+                      fontWeight: '700'
+                    }}>
+                      {story.clientType}
+                    </div>
+                  </div>
+
+                  <div style={{ padding: '32px' }}>
+                    <h3 style={{ fontSize: '1.4rem', marginBottom: '16px', color: 'var(--text-main)', fontFamily: 'var(--font-lora)' }}>
+                      {story.title}
+                    </h3>
+
+                    <div style={{ marginBottom: '14px', fontSize: '0.975rem', color: 'var(--accent-terracotta)', fontWeight: '600' }}>
+                      {story.failureScenario}
+                    </div>
+
+                    <div style={{ marginBottom: '20px', fontSize: '0.975rem', color: 'var(--text-muted)' }}>
+                      {story.scaryMoment}
+                    </div>
+
+                    <div style={{
+                      backgroundColor: 'var(--bg-canvas)',
+                      padding: '16px',
+                      borderRadius: '12px',
+                      borderLeft: '4px solid var(--accent-forest)',
+                      fontSize: '0.95rem',
+                      fontWeight: '600',
+                      color: 'var(--accent-forest)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
+                    }}>
+                      <CheckCircle2 size={18} color="var(--accent-forest)" style={{ flexShrink: 0 }} />
+                      <span>{story.impactMetric}: {story.outcome}</span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-dark" style={{ textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '780px' }}>
+          <ScrollReveal>
+            <h2 style={{ color: '#FDF8F5', fontSize: '2.75rem', marginTop: '12px', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
+              Let's Talk About Your Project Realities
+            </h2>
+            <p style={{ color: '#D6D3D1', fontSize: '1.2rem', margin: '0 auto 36px', lineHeight: 1.7 }}>
+              Select a 30-minute window with a senior partner. We will listen, give you honest guidance, and answer every question without expectation.
+            </p>
+
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/contact" className="btn btn-primary" style={{ padding: '18px 36px', fontSize: '1.1rem' }}>
+                <Calendar size={18} /> {siteData.heroConfig.ctaPrimaryText}
+              </Link>
+              <Link href="/about" className="btn btn-outline" style={{ color: '#FDF8F5', borderColor: '#78716C' }}>
+                Learn About Our Firm
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

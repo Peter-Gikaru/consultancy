@@ -134,11 +134,9 @@ export default function HeroFullWidthCarousel() {
       style={{
         position: 'relative',
         width: '100%',
-        marginTop: '-80px',
-        paddingTop: '80px',
-        height: '85vh',
-        minHeight: '580px',
-        maxHeight: '750px',
+        height: 'calc(80vh - 80px)',
+        minHeight: '480px',
+        maxHeight: '640px',
         backgroundColor: '#1C1917',
         overflow: 'hidden'
       }}

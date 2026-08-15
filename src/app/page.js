@@ -18,7 +18,7 @@ import RotatingHeroHeadline from '@/components/RotatingHeroHeadline';
 import RadialGaugeMetric from '@/components/RadialGaugeMetric';
 import ScrollReveal from '@/components/ScrollReveal';
 import { siteData } from '@/config/siteData';
-import { mediaStore } from '@/utils/mediaStore';
+import { mediaStore, getImageUrl } from '@/utils/mediaStore';
 
 export default function HomePage() {
   const [stories, setStories] = useState([]);
@@ -270,8 +270,8 @@ export default function HomePage() {
                 <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
                   <div style={{ position: 'relative', height: '220px', width: '100%' }}>
                     <Image
-                      src={story.image}
-                      alt={story.alt}
+                      src={getImageUrl(story.image)}
+                      alt={story.alt || story.title || 'Project image'}
                       fill
                       style={{ objectFit: 'cover' }}
                     />

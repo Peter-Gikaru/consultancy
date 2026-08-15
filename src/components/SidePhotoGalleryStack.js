@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getImageUrl } from '@/utils/mediaStore';
 import {
   FileText,
   Heart,
@@ -129,7 +130,7 @@ export default function SidePhotoGalleryStack({ items = [] }) {
           />
         ) : (
           <Image
-            src={activeItem.image || activeItem.mediaUrl || '/images/policy-meeting.jpg'}
+            src={getImageUrl(activeItem.image || activeItem.mediaUrl || '/images/policy-meeting.jpg')}
             alt={activeItem.title}
             fill
             style={{ objectFit: 'cover', transition: 'all 0.5s ease' }}
@@ -217,7 +218,7 @@ export default function SidePhotoGalleryStack({ items = [] }) {
               className={`filmstrip-thumb ${isActive ? 'active' : ''}`}
             >
               <Image
-                src={item.image || item.mediaUrl || '/images/policy-meeting.jpg'}
+                src={getImageUrl(item.image || item.mediaUrl || '/images/policy-meeting.jpg')}
                 alt={item.title}
                 fill
                 style={{ objectFit: 'cover' }}

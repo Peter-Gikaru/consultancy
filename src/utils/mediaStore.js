@@ -94,3 +94,5 @@ export const mediaStore = {
     });
   }
 };
+
+export { getImageUrl } from './getImageUrl';

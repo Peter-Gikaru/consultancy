@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { siteData } from '@/config/siteData';
-import { mediaStore } from '@/utils/mediaStore';
+import { mediaStore, getImageUrl } from '@/utils/mediaStore';
 
 export default function VerticalSpotlightCarousel() {
   const [items, setItems] = useState([]);
@@ -159,7 +159,7 @@ export default function VerticalSpotlightCarousel() {
                   flexShrink: 0
                 }}>
                   <Image
-                    src={item.image}
+                    src={getImageUrl(item.image)}
                     alt={item.alt || item.headline || 'Spotlight photo'}
                     fill
                     sizes="(max-width: 768px) 100vw, 500px"

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Quote, ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 export const metadata = {
   title: `About Our Story & Philosophy - ${siteData.siteInfo.brandName}`,
@@ -34,7 +35,7 @@ export default function AboutPage() {
             <ScrollReveal delay={150}>
               <div style={{ position: 'relative', height: '420px', borderRadius: 'var(--radius-card)', overflow: 'hidden', boxShadow: '0 16px 36px rgba(0,0,0,0.08)' }}>
                 <Image
-                  src="/images/team-meeting.jpg"
+                  src={getImageUrl("/images/team-meeting.jpg")}
                   alt="Meridian senior advisors engaging in quiet evaluation strategy"
                   fill
                   style={{ objectFit: 'cover' }}

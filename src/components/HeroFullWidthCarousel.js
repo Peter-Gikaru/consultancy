@@ -19,7 +19,6 @@ export default function HeroFullWidthCarousel() {
   const defaultSlides = [
     {
       id: 'hero-slide-1',
-      headline: 'How Pastoralist Communities Built Climate Resilience Through Direct Adaptation Finance',
       subheadline: 'Discover how our partnership with local climate committees in Kenya & Ethiopia mobilized over $40M in decentralized adaptation funds.',
       image: '/images/climate-project.jpg',
       ctaText: 'Read our impact story',
@@ -27,7 +26,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-2',
-      headline: 'Overcoming Execution Friction in County Medical Supply Chains',
       subheadline: 'Our embedded team deployed to 12 county health executive offices, implementing real-time tracking to cut medicine stock-outs by 40%.',
       image: '/images/kenya-health-case.jpg',
       ctaText: 'Explore recovery framework',
@@ -35,7 +33,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-3',
-      headline: 'Co-Designing National Safety Net Guidelines with Embedded Technical Teams',
       subheadline: 'Working shoulder-to-shoulder with ministry leaders to draft transparent legislative frameworks and de-risk public financial management.',
       image: '/images/policy-meeting.jpg',
       ctaText: 'Learn about our approach',
@@ -43,7 +40,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-4',
-      headline: 'Eliminating Operational Bottlenecks & Restoring Project Momentum',
       subheadline: 'We diagnose technical and human friction within 14 days, creating clear 5-page action blueprints that restore psychological safety and speed.',
       image: '/images/team-meeting.jpg',
       ctaText: 'Book a consultation',
@@ -66,8 +62,7 @@ export default function HeroFullWidthCarousel() {
 
     const formattedPosts = combinedCustomServer.map((post) => ({
       id: post.id,
-      headline: post.title,
-      subheadline: post.summary,
+      subheadline: post.summary || post.title,
       image: post.mediaUrl || '/images/policy-meeting.jpg',
       ctaText: 'Read full field post',
       ctaLink: '/contact'
@@ -163,7 +158,7 @@ export default function HeroFullWidthCarousel() {
           >
             <Image
               src={getImageUrl(slide.image)}
-              alt={slide.headline}
+              alt={slide.subheadline}
               fill
               priority={idx === 0}
               sizes="100vw"
@@ -205,35 +200,21 @@ export default function HeroFullWidthCarousel() {
         }}
       >
         <div style={{ maxWidth: '780px' }}>
-          {/* Headline */}
           <h1
             style={{
               color: '#FFFFFF',
-              fontSize: 'clamp(2.2rem, 4.2vw, 3.4rem)',
+              fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)',
               fontFamily: 'var(--font-lora)',
-              fontWeight: '600',
-              lineHeight: 1.18,
-              margin: '0 0 20px',
+              fontWeight: '500',
+              lineHeight: 1.35,
+              margin: '0 0 32px',
+              maxWidth: '740px',
               textShadow: '0 4px 20px rgba(0,0,0,0.5)',
               letterSpacing: '-0.01em'
             }}
           >
-            {currentSlide.headline}
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            style={{
-              color: '#E7E5E4',
-              fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
-              lineHeight: 1.6,
-              margin: '0 0 32px',
-              maxWidth: '680px',
-              textShadow: '0 2px 10px rgba(0,0,0,0.5)'
-            }}
-          >
             {currentSlide.subheadline}
-          </p>
+          </h1>
 
           {/* CTA Button */}
           <div>

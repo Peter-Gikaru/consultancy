@@ -171,20 +171,6 @@ export default function VerticalSpotlightCarousel() {
                     quality={95}
                     priority={isBump}
                   />
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '12px',
-                    left: '12px',
-                    backgroundColor: 'rgba(253, 248, 245, 0.95)',
-                    backdropFilter: 'blur(6px)',
-                    color: 'var(--accent-terracotta)',
-                    padding: '5px 12px',
-                    borderRadius: '12px',
-                    fontSize: '0.78rem',
-                    fontWeight: '700'
-                  }}>
-                    {item.badge || item.headline}
-                  </div>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

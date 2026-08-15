@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   Calendar
 } from 'lucide-react';
+import HeroFullWidthCarousel from '@/components/HeroFullWidthCarousel';
 import VerticalSpotlightCarousel from '@/components/VerticalSpotlightCarousel';
 import InteractiveHeroScorecard from '@/components/InteractiveHeroScorecard';
 import RotatingHeroHeadline from '@/components/RotatingHeroHeadline';
@@ -71,96 +72,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section
-        className="section"
-        style={{
-          position: 'relative',
-          padding: '24px 24px 40px',
-          backgroundColor: 'var(--bg-canvas)',
-          overflow: 'hidden'
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            right: '1%',
-            width: '140px',
-            pointerEvents: 'none',
-            zIndex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-          className="desktop-only"
-        >
-          <svg
-            viewBox="0 0 140 1000"
-            preserveAspectRatio="none"
-            style={{ width: '100%', height: '100%', opacity: 0.35 }}
-          >
-            <path
-              d="M 10,0 C 130,330 130,670 10,1000"
-              fill="none"
-              stroke="var(--accent-terracotta)"
-              strokeWidth="4"
-              strokeDasharray="8 4"
-            />
-            <path
-              d="M 25,0 C 145,330 145,670 25,1000"
-              fill="none"
-              stroke="var(--accent-terracotta)"
-              strokeWidth="1.5"
-              opacity="0.5"
-            />
-          </svg>
-        </div>
-
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="grid-2" style={{ alignItems: 'center', gap: '40px' }}>
-            <div className="animate-fade-up">
-              <RotatingHeroHeadline />
-
-              <p className="lead" style={{ marginBottom: '32px', color: 'var(--text-muted)' }}>
-                {siteData.heroConfig.subheadline}
-              </p>
-
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
-                <Link href={siteData.heroConfig.ctaPrimaryLink} className="btn btn-primary" style={{ padding: '16px 32px' }}>
-                  {siteData.heroConfig.ctaPrimaryText} <ArrowRight size={18} />
-                </Link>
-                <Link href={siteData.heroConfig.ctaSecondaryLink} className="btn btn-outline" style={{ padding: '16px 28px' }}>
-                  {siteData.heroConfig.ctaSecondaryText}
-                </Link>
-              </div>
-
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '20px',
-                paddingTop: '20px',
-                borderTop: '1px solid var(--border-light)'
-              }}>
-                <RadialGaugeMetric
-                  percentage={100}
-                  label="Unbiased Advisory"
-                  color="var(--accent-terracotta)"
-                />
-                <RadialGaugeMetric
-                  percentage={94}
-                  label="On-Time Recovery"
-                  color="var(--accent-forest)"
-                />
-              </div>
-            </div>
-
-            <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <VerticalSpotlightCarousel />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroFullWidthCarousel />
 
       <section className="section section-blush">
         <div className="container">

@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { LifeBuoy, ShieldAlert, Users, FileCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import EmotionalStateFilter from '@/components/EmotionalStateFilter';
 import ScrollReveal from '@/components/ScrollReveal';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 export const metadata = {
   title: `Practice Offerings & Methodology - ${siteData.siteInfo.brandName}`,
@@ -21,20 +23,17 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="section" style={{ backgroundColor: 'var(--bg-canvas)', padding: '80px 24px 40px' }}>
+      <section className="section" style={{ backgroundColor: 'var(--bg-canvas)', padding: '70px 24px 40px' }}>
         <div className="container">
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-            <h1 style={{ fontSize: '3.25rem', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
-              {overviewTitle}
-            </h1>
-            <p className="lead" style={{ margin: '0 auto 32px' }}>
+            <h1 style={{ fontSize: '2.4rem', margin: '0 auto', fontFamily: 'var(--font-lora)', fontWeight: '500', lineHeight: 1.35 }}>
               {overviewSubtitle}
-            </p>
+            </h1>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ padding: '0 24px 60px' }}>
+      <section className="section" style={{ padding: '0 24px 50px' }}>
         <div className="container">
           <EmotionalStateFilter />
         </div>
@@ -43,13 +42,10 @@ export default function ServicesPage() {
       <section className="section section-blush">
         <div className="container">
           <ScrollReveal>
-            <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 56px' }}>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '8px' }}>
-                Dedicated Practice Offerings
-              </h2>
-              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
+              <h2 style={{ fontSize: '1.75rem', margin: '0 auto', fontWeight: '500', fontFamily: 'var(--font-lora)' }}>
                 Each offering is tailored to your specific organizational scale and technical complexity.
-              </p>
+              </h2>
             </div>
           </ScrollReveal>
 
@@ -58,7 +54,18 @@ export default function ServicesPage() {
               const IconComp = iconMap[service.iconName] || LifeBuoy;
               return (
                 <ScrollReveal key={service.id} delay={idx * 100}>
-                  <div id={service.id} className="card" style={{ padding: '44px' }}>
+                  <div id={service.id} className="card" style={{ padding: '36px', overflow: 'hidden' }}>
+                    {service.image && (
+                      <div style={{ position: 'relative', height: '240px', width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '28px' }}>
+                        <Image
+                          src={getImageUrl(service.image)}
+                          alt={service.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </div>
+                    )}
                     <div className="grid-2" style={{ alignItems: 'flex-start', gap: '40px' }}>
                       <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
@@ -139,13 +146,10 @@ export default function ServicesPage() {
       <section className="section" style={{ backgroundColor: 'var(--bg-canvas)' }}>
         <div className="container">
           <ScrollReveal>
-            <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 56px' }}>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
-                {methodology.title}
-              </h2>
-              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
+              <h2 style={{ fontSize: '1.75rem', margin: '0 auto', fontWeight: '500', fontFamily: 'var(--font-lora)' }}>
                 {methodology.subtitle}
-              </p>
+              </h2>
             </div>
           </ScrollReveal>
 

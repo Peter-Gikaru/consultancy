@@ -35,17 +35,9 @@ export default function BrainAuditForm() {
       border: '2px solid var(--border-accent)',
       boxShadow: '0 12px 36px rgba(0,0,0,0.06)'
     }}>
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-terracotta)', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '12px' }}>
-        <Video size={18} /> {config.badge}
-      </div>
-
-      <h3 style={{ fontSize: '2rem', color: 'var(--text-main)', marginBottom: '12px', fontFamily: 'var(--font-lora)' }}>
-        {config.title}
-      </h3>
-
-      <p style={{ color: 'var(--text-muted)', fontSize: '1.08rem', marginBottom: '32px', lineHeight: 1.65 }}>
+      <h3 style={{ fontSize: '1.6rem', color: 'var(--text-main)', marginBottom: '24px', fontFamily: 'var(--font-lora)', fontWeight: '500', lineHeight: 1.35 }}>
         {config.subtitle}
-      </p>
+      </h3>
 
       {submitted ? (
         <div style={{

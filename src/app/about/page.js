@@ -19,12 +19,9 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid-2" style={{ alignItems: 'center', gap: '56px' }}>
             <ScrollReveal>
-              <h1 style={{ fontSize: '3rem', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
-                {title}
-              </h1>
-              <p className="lead" style={{ marginBottom: '24px' }}>
+              <h1 style={{ fontSize: '2.4rem', marginBottom: '24px', fontFamily: 'var(--font-lora)', lineHeight: 1.35, fontWeight: '500' }}>
                 {subtitle}
-              </p>
+              </h1>
               <div style={{ display: 'flex', gap: '16px' }}>
                 <Link href="/contact" className="btn btn-primary">
                   Speak With Our Senior Partners <ArrowRight size={18} />
@@ -50,11 +47,8 @@ export default function AboutPage() {
         <div className="container">
           <ScrollReveal>
             <div style={{ maxWidth: '800px', margin: '0 auto 48px' }}>
-              <h2 style={{ fontSize: '2.4rem', marginBottom: '20px', textAlign: 'center', fontFamily: 'var(--font-lora)' }}>
-                {philosophyTitle}
-              </h2>
               {philosophyParagraphs.map((para, idx) => (
-                <p key={idx} style={{ fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '16px' }}>
+                <p key={idx} style={{ fontSize: '1.15rem', lineHeight: 1.7, marginBottom: '16px', fontFamily: idx === 0 ? 'var(--font-lora)' : 'inherit' }}>
                   {para}
                 </p>
               ))}
@@ -81,13 +75,10 @@ export default function AboutPage() {
       <section className="section" style={{ backgroundColor: 'var(--bg-canvas)' }}>
         <div className="container">
           <ScrollReveal>
-            <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 56px' }}>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
-                Meet The People Who Will Sit Across From You
-              </h2>
-              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
+              <h2 style={{ fontSize: '1.75rem', margin: '0 auto', color: 'var(--text-main)', fontWeight: '500', lineHeight: 1.45, fontFamily: 'var(--font-lora)' }}>
                 No junior hand-offs. You work directly with former executives who have navigated high-stakes project environments.
-              </p>
+              </h2>
             </div>
           </ScrollReveal>
 
@@ -97,7 +88,7 @@ export default function AboutPage() {
                 <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
                   <div style={{ position: 'relative', height: '260px', width: '100%' }}>
                     <Image
-                      src={member.image}
+                      src={getImageUrl(member.image)}
                       alt={member.name}
                       fill
                       style={{ objectFit: 'cover' }}

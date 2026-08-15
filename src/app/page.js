@@ -78,12 +78,9 @@ export default function HomePage() {
         <div className="container">
           <div className="grid-2" style={{ alignItems: 'center', gap: '48px' }}>
             <ScrollReveal>
-              <h2 style={{ fontSize: '2.5rem', marginTop: '8px', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
-                {siteData.homeIntro.title}
-              </h2>
-              <p className="lead" style={{ margin: '0 0 24px' }}>
+              <h2 style={{ fontSize: '1.8rem', marginTop: '8px', marginBottom: '20px', fontFamily: 'var(--font-lora)', lineHeight: 1.35 }}>
                 {siteData.homeIntro.leadText}
-              </p>
+              </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {siteData.homeIntro.pillars.map((pillar, idx) => (
                   <ScrollReveal key={idx} delay={idx * 100}>
@@ -110,13 +107,10 @@ export default function HomePage() {
       <section className="section" style={{ backgroundColor: 'var(--bg-canvas)' }}>
         <div className="container">
           <ScrollReveal>
-            <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 56px' }}>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
-                {siteData.servicesConfig.overviewTitle}
-              </h2>
-              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
+              <h2 style={{ fontSize: '1.75rem', margin: '0 auto', color: 'var(--text-main)', fontWeight: '500', lineHeight: 1.45, fontFamily: 'var(--font-lora)' }}>
                 We evaluate, stabilize, and optimize high-stakes projects across construction, tech, and enterprise change.
-              </p>
+              </h2>
             </div>
           </ScrollReveal>
 
@@ -125,22 +119,36 @@ export default function HomePage() {
               const IconComp = iconMap[service.iconName] || LifeBuoy;
               return (
                 <ScrollReveal key={service.id} delay={idx * 120}>
-                  <div className="card">
-                    <div className="card-icon-wrapper" style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '12px',
-                      backgroundColor: 'var(--bg-blush)',
-                      color: 'var(--accent-terracotta)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '20px'
-                    }}>
-                      <IconComp size={24} />
-                    </div>
+                  <div className="card" style={{ overflow: 'hidden', padding: '24px' }}>
+                    {service.image && (
+                      <div style={{ position: 'relative', height: '200px', width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '20px' }}>
+                        <Image
+                          src={getImageUrl(service.image)}
+                          alt={service.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(max-width: 768px) 100vw, 500px"
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          top: '12px',
+                          right: '12px',
+                          width: '42px',
+                          height: '42px',
+                          borderRadius: '12px',
+                          backgroundColor: 'rgba(253, 248, 245, 0.92)',
+                          backdropFilter: 'blur(6px)',
+                          color: 'var(--accent-terracotta)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <IconComp size={22} />
+                        </div>
+                      </div>
+                    )}
 
-                    <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--text-main)' }}>
+                    <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--text-main)', fontFamily: 'var(--font-lora)' }}>
                       {service.title}
                     </h3>
 
@@ -166,13 +174,10 @@ export default function HomePage() {
       <section className="section section-blush">
         <div className="container">
           <ScrollReveal>
-            <div style={{ maxWidth: '750px', margin: '0 auto 56px', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '8px', marginBottom: '16px' }}>
-                The Pivot Point: How We Fixed Derailed Projects
-              </h2>
-              <p style={{ margin: '0 auto', fontSize: '1.1rem' }}>
+            <div style={{ maxWidth: '750px', margin: '0 auto 48px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '1.75rem', margin: '0 auto', fontWeight: '500', fontFamily: 'var(--font-lora)' }}>
                 Here is how real project recovery happens.
-              </p>
+              </h2>
             </div>
           </ScrollReveal>
 

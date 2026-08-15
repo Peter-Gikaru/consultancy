@@ -19,7 +19,6 @@ export default function HeroFullWidthCarousel() {
   const defaultSlides = [
     {
       id: 'hero-slide-1',
-      badge: 'Climate & Resilience',
       headline: 'How Pastoralist Communities Built Climate Resilience Through Direct Adaptation Finance',
       subheadline: 'Discover how our partnership with local climate committees in Kenya & Ethiopia mobilized over $40M in decentralized adaptation funds.',
       image: '/images/climate-project.jpg',
@@ -28,7 +27,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-2',
-      badge: 'Health Systems Strengthening',
       headline: 'Overcoming Execution Friction in County Medical Supply Chains',
       subheadline: 'Our embedded team deployed to 12 county health executive offices, implementing real-time tracking to cut medicine stock-outs by 40%.',
       image: '/images/kenya-health-case.jpg',
@@ -37,7 +35,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-3',
-      badge: 'Policy & Governance',
       headline: 'Co-Designing National Safety Net Guidelines with Embedded Technical Teams',
       subheadline: 'Working shoulder-to-shoulder with ministry leaders to draft transparent legislative frameworks and de-risk public financial management.',
       image: '/images/policy-meeting.jpg',
@@ -46,7 +43,6 @@ export default function HeroFullWidthCarousel() {
     },
     {
       id: 'hero-slide-4',
-      badge: 'Team & Morale Alignment',
       headline: 'Eliminating Operational Bottlenecks & Restoring Project Momentum',
       subheadline: 'We diagnose technical and human friction within 14 days, creating clear 5-page action blueprints that restore psychological safety and speed.',
       image: '/images/team-meeting.jpg',
@@ -70,7 +66,6 @@ export default function HeroFullWidthCarousel() {
 
     const formattedPosts = combinedCustomServer.map((post) => ({
       id: post.id,
-      badge: post.category || 'Field Insight',
       headline: post.title,
       subheadline: post.summary,
       image: post.mediaUrl || '/images/policy-meeting.jpg',
@@ -210,27 +205,6 @@ export default function HeroFullWidthCarousel() {
         }}
       >
         <div style={{ maxWidth: '780px' }}>
-          {/* Badge */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              backgroundColor: 'rgba(253, 248, 245, 0.15)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
-              color: '#FDF8F5',
-              padding: '6px 16px',
-              borderRadius: '20px',
-              fontSize: '0.85rem',
-              fontWeight: '700',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '20px'
-            }}
-          >
-            {currentSlide.badge}
-          </div>
-
           {/* Headline */}
           <h1
             style={{

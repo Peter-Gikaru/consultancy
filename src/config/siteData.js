@@ -133,6 +133,7 @@ export const siteData = {
         iconName: "Users",
         title: "Team & Morale",
         tagline: "Eliminating Friction & Re-Energizing Burned-Out Teams",
+        image: "/images/team-meeting.jpg",
         description: "Re-aligning leadership and engineering around clear, human-sized goals that restore psychological safety and speed.",
         deliverables: [
           "Role clarity & decision rights map",
@@ -146,6 +147,7 @@ export const siteData = {
         iconName: "FileCheck",
         title: "Vendor Accountability",
         tagline: "Honest Technical Audits of Third-Party Partners",
+        image: "/images/policy-meeting.jpg",
         description: "Unbiased technical verification of vendor claims, ensuring you only pay for true progress and verifiable code or infrastructure.",
         deliverables: [
           "Independent code & delivery review",
@@ -159,6 +161,7 @@ export const siteData = {
         iconName: "LifeBuoy",
         title: "Project Rescue",
         tagline: "Turning Stalled Projects Into Predictable Deliveries",
+        image: "/images/hero-kenya.jpg",
         description: "We diagnose root causes of delay within 14 days, restructuring team workflows and vendor agreements to restore momentum.",
         deliverables: [
           "Root cause friction matrix",
@@ -172,6 +175,7 @@ export const siteData = {
         iconName: "ShieldAlert",
         title: "Risk & Governance",
         tagline: "Exposing Blindspots Before They Become Crises",
+        image: "/images/expertise-collage.jpg",
         description: "Independent audit of technical architectures, budget allocations, and compliance gaps to shield your organization from sudden shocks.",
         deliverables: [
           "Discreet vulnerability audit",

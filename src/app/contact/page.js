@@ -19,12 +19,9 @@ export default function ContactPage() {
         <div className="container">
           <ScrollReveal>
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-              <h1 style={{ fontSize: '3.25rem', marginBottom: '20px', fontFamily: 'var(--font-lora)' }}>
-                Let's Talk About What's Really Going On.
+              <h1 style={{ fontSize: '2.4rem', margin: '0 auto', fontFamily: 'var(--font-lora)', fontWeight: '500', lineHeight: 1.35 }}>
+                No gatekeepers, no sales pitches. Select a time slot to speak directly with a senior partner.
               </h1>
-              <p className="lead" style={{ margin: '0 auto 32px' }}>
-                No gatekeepers, no sales pitches. Select a time slot to speak directly with a senior partner, or submit your specific challenge for a video audit.
-              </p>
             </div>
           </ScrollReveal>
         </div>

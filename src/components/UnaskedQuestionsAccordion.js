@@ -16,13 +16,10 @@ export default function UnaskedQuestionsAccordion() {
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '2.25rem', marginTop: '8px', color: 'var(--text-main)' }}>
-          Things You're Too Polite to Ask Out Loud
+      <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+        <h2 style={{ fontSize: '1.75rem', margin: '0 auto', color: 'var(--text-main)', fontWeight: '500', fontFamily: 'var(--font-lora)' }}>
+          We address the elephants in the room upfront so you can make decisions without doubt.
         </h2>
-        <p style={{ margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
-          We address the elephants in the room upfront so you can make decisions without doubt or hesitation.
-        </p>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

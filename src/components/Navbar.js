@@ -22,9 +22,9 @@ export default function Navbar() {
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      backgroundColor: 'rgba(253, 248, 245, 0.92)',
-      backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid var(--border-light)',
+      backgroundColor: 'transparent',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
       transition: 'all 0.3s ease'
     }}>
       <div className="container" style={{

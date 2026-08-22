@@ -13,7 +13,7 @@ export default function NoBsPricingAnchor() {
 
   return (
     <>
-      {/* Permanent Floating Button (Lower Right) */}
+      
       <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 999 }}>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -39,7 +39,6 @@ export default function NoBsPricingAnchor() {
           <span>{config.badge}</span>
         </button>
 
-        {/* Expanded Drawer Modal */}
         {isOpen && (
           <div
             style={{
@@ -82,7 +81,6 @@ export default function NoBsPricingAnchor() {
               {config.subtext}
             </p>
 
-            {/* Bullets */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
               {config.bullets.map((bullet, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.875rem', color: 'var(--text-main)' }}>

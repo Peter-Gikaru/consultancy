@@ -1,6 +1,6 @@
 'use client';
 
-export default function WaveRibbonBackground({ className = '', style = {} }) {
+export default function WaveRibbonBackground({ className = '', style =  }) {
   return (
     <div
       className={`wave-ribbon-wrapper ${className}`}
@@ -24,18 +24,18 @@ export default function WaveRibbonBackground({ className = '', style = {} }) {
         preserveAspectRatio="none"
         style={{ opacity: 0.55 }}
       >
-        {/* Layer 1: Terracotta Clay Ribbon Wave */}
+        
         <path
           d="M-100,200 C300,100 600,450 1000,250 C1300,100 1500,300 1600,350 L1600,600 L-100,600 Z"
           fill="url(#terracottaClayGradient)"
         />
-        {/* Layer 2: Acacia Forest Green Wave */}
+        
         <path
           d="M-100,350 C250,450 650,200 1100,400 C1350,500 1550,250 1600,200 L1600,600 L-100,600 Z"
           fill="url(#acaciaForestGradient)"
           style={{ opacity: 0.75 }}
         />
-        {/* Layer 3: Warm Brass Accent Flow */}
+        
         <path
           d="M-50,120 C400,280 750,80 1200,220 C1400,300 1550,150 1600,180"
           stroke="url(#brassStrokeGradient)"

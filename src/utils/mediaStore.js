@@ -1,12 +1,10 @@
 'use client';
 
-// Key constants for localStorage
 const DELETED_MEDIA_KEY = 'meridian_deleted_media_urls';
 const DELETED_POSTS_KEY = 'meridian_deleted_post_ids';
 const CUSTOM_POSTS_KEY = 'meridian_custom_posts';
 const UPLOADED_MEDIA_KEY = 'meridian_uploaded_media';
 
-// Helper to get array from localStorage safely
 function getStorageArray(key) {
   if (typeof window === 'undefined') return [];
   try {
@@ -18,12 +16,11 @@ function getStorageArray(key) {
   }
 }
 
-// Helper to set array in localStorage safely
 function setStorageArray(key, value) {
   if (typeof window === 'undefined') return;
   try {
     localStorage.setItem(key, JSON.stringify(value));
-    // Dispatch custom event so other components/tabs re-render immediately
+    
     window.dispatchEvent(new Event('meridian_store_change'));
   } catch (e) {
     console.error('Error writing localStorage key:', key, e);
@@ -31,7 +28,7 @@ function setStorageArray(key, value) {
 }
 
 export const mediaStore = {
-  // Track deleted media URLs
+  
   getDeletedMediaUrls() {
     return getStorageArray(DELETED_MEDIA_KEY);
   },
@@ -42,7 +39,6 @@ export const mediaStore = {
     }
   },
 
-  // Track deleted post IDs
   getDeletedPostIds() {
     return getStorageArray(DELETED_POSTS_KEY);
   },
@@ -53,7 +49,6 @@ export const mediaStore = {
     }
   },
 
-  // Custom posts saved in browser
   getCustomPosts() {
     return getStorageArray(CUSTOM_POSTS_KEY);
   },
@@ -66,7 +61,6 @@ export const mediaStore = {
     setStorageArray(CUSTOM_POSTS_KEY, current.filter(p => p.id !== id));
   },
 
-  // Custom uploaded media saved in browser
   getUploadedMedia() {
     return getStorageArray(UPLOADED_MEDIA_KEY);
   },
@@ -75,7 +69,6 @@ export const mediaStore = {
     setStorageArray(UPLOADED_MEDIA_KEY, [item, ...current]);
   },
 
-  // Filter static items by checking if their image or ID was deleted
   filterActiveItems(items, idKey = 'id', imageKey = 'image') {
     const deletedUrls = this.getDeletedMediaUrls();
     const deletedIds = this.getDeletedPostIds();

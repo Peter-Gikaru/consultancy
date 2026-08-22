@@ -28,7 +28,6 @@ export default function VerticalSpotlightCarousel() {
     }
   }, []);
 
-  // Silent background rotation timer (without visible progress bar or control text)
   useEffect(() => {
     if (isPaused || items.length <= 1) return;
 

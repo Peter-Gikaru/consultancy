@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60">
+  <!-- AfDB Navy & Green Badge -->
+  <rect width="48" height="48" x="6" y="6" rx="8" fill="#003366"/>
+  <path d="M16 42V20L27 12L38 20V42H16Z" fill="#008751"/>
+  <path d="M21 24H33V42H21V24Z" fill="#FFFFFF"/>
+  <circle cx="27" cy="31" r="3" fill="#003366"/>
+
+  <!-- AfDB Text -->
+  <text x="66" y="28" fill="#003366" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="18" letter-spacing="0.5px">AFRICAN DEVELOPMENT</text>
+  <text x="66" y="46" fill="#008751" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="14" letter-spacing="1px">BANK GROUP</text>
+</svg>

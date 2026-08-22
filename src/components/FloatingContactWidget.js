@@ -11,7 +11,7 @@ export default function FloatingContactWidget() {
 
   return (
     <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 1000 }}>
-      {/* Floating Greeting Tooltip Teaser */}
+      
       {showTooltip && !open && (
         <div className="glass-card animate-fade-up" style={{
           position: 'absolute',
@@ -41,32 +41,55 @@ export default function FloatingContactWidget() {
         </div>
       )}
 
-      {/* Floating Trigger Button */}
       <button
         onClick={() => setOpen(!open)}
         aria-label="Quick contact widget"
         style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '10px',
-          padding: '12px 22px',
-          borderRadius: '30px',
-          backgroundColor: 'var(--bg-dark)',
-          color: 'var(--text-on-dark)',
-          border: '1px solid var(--accent-terracotta)',
-          boxShadow: '0 10px 28px rgba(38, 35, 34, 0.25), 0 0 0 4px var(--accent-terracotta-glow)',
+          width: '56px',
+          height: '56px',
+          borderRadius: '50%',
+          backgroundColor: '#0F172A',
+          border: '2px solid var(--accent-amber)',
+          boxShadow: '0 10px 28px rgba(15, 23, 42, 0.35)',
           cursor: 'pointer',
-          fontSize: '0.9rem',
-          fontWeight: '600',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '3px',
+          overflow: 'visible',
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
-        <span className="pulse-dot-warm" />
-        <MessageSquare size={18} />
-        <span>Senior Advisory Desk</span>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <img
+            src="/images/logo.jpg"
+            alt="Senior Advisory Desk"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </div>
+        <span
+          className="pulse-dot-warm"
+          style={{
+            position: 'absolute',
+            top: '0px',
+            right: '0px',
+            border: '2px solid #0F172A',
+            width: '12px',
+            height: '12px'
+          }}
+        />
       </button>
 
-      {/* Quick Drawer Popup */}
       {open && (
         <div className="glass-card animate-fade-up" style={{
           position: 'absolute',
@@ -78,7 +101,7 @@ export default function FloatingContactWidget() {
           overflow: 'hidden',
           zIndex: 1000
         }}>
-          {/* Drawer Header */}
+          
           <div style={{
             backgroundColor: 'var(--bg-dark)',
             color: 'var(--text-on-dark)',
@@ -87,13 +110,18 @@ export default function FloatingContactWidget() {
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: '700', textTransform: 'uppercase' }}>
-                <span className="pulse-dot-warm" /> Senior Partner Desk
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '1.5px solid var(--accent-amber)', backgroundColor: '#FFFFFF' }}>
+                <img src="/images/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <h4 style={{ color: '#FDF8F5', margin: '4px 0 0', fontSize: '1.1rem', fontFamily: 'var(--font-lora)', fontWeight: '600' }}>
-                {siteData.siteInfo.brandName}
-              </h4>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', color: 'var(--accent-amber)', fontWeight: '700', textTransform: 'uppercase' }}>
+                  <span className="pulse-dot-warm" /> Senior Partner Desk
+                </div>
+                <h4 style={{ color: '#FDF8F5', margin: '2px 0 0', fontSize: '1.05rem', fontFamily: 'var(--font-lora)', fontWeight: '600' }}>
+                  {siteData.siteInfo.brandName}
+                </h4>
+              </div>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -109,7 +137,6 @@ export default function FloatingContactWidget() {
             </button>
           </div>
 
-          {/* Drawer Body */}
           <div style={{ padding: '24px', backgroundColor: 'var(--bg-card)' }}>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '20px', lineHeight: 1.5 }}>
               Speak directly with our senior evaluation team. High confidentiality, zero sales pitches.
@@ -171,4 +198,3 @@ export default function FloatingContactWidget() {
     </div>
   );
 }
-

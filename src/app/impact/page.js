@@ -1,4 +1,5 @@
-import AboutPage, { metadata } from '../about/page';
+import { redirect } from 'next/navigation';
 
-export { metadata };
-export default AboutPage;
+export default function ImpactPage() {
+  redirect('/track-record');
+}

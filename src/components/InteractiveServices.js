@@ -82,7 +82,7 @@ export default function InteractiveServices() {
 
   return (
     <div className="sticky-split-container" style={{ marginTop: '24px' }}>
-      {/* Pinned Sticky Left Column */}
+      
       <div className="sticky-left-col">
         <div style={{
           display: 'inline-flex',
@@ -124,7 +124,6 @@ export default function InteractiveServices() {
         </Link>
       </div>
 
-      {/* Side Photo Gallery Filmstrip Stack Component */}
       <div>
         <SidePhotoGalleryStack items={services} />
       </div>

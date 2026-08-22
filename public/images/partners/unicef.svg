@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <!-- UNICEF Blue Emblem -->
+  <circle cx="30" cy="30" r="24" fill="#00ADEF"/>
+  <circle cx="30" cy="20" r="5" fill="#FFFFFF"/>
+  <path d="M19 39C19 33 23 28 30 28C37 28 41 33 41 39" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M22 43C25 45.5 35 45.5 38 43" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round"/>
+  
+  <!-- UNICEF Wordmark -->
+  <text x="68" y="42" fill="#00ADEF" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="34" letterSpacing="-1px">unicef</text>
+  <text x="178" y="24" fill="#00ADEF" font-family="'Inter', sans-serif" font-weight="700" font-size="12">AFRICA</text>
+</svg>

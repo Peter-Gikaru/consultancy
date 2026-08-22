@@ -59,7 +59,8 @@ export async function POST(request) {
     const buffer = Buffer.from(bytes);
 
     const isVideo = file.type.startsWith('video/') || file.name.match(/\.(mp4|webm|mov|avi|mkv)$/i);
-    const subFolder = isVideo ? 'videos/uploads' : 'images/uploads';
+    const isPdf = file.type === 'application/pdf' || file.name.endsWith('.pdf');
+    const subFolder = isPdf ? 'documents/uploads' : isVideo ? 'videos/uploads' : 'images/uploads';
     const uploadDir = path.join(process.cwd(), 'public', subFolder);
 
     if (!fs.existsSync(uploadDir)) {
@@ -77,7 +78,7 @@ export async function POST(request) {
       success: true,
       url: publicUrl,
       fileName: file.name,
-      mediaType: isVideo ? 'video' : 'image'
+      mediaType: isPdf ? 'pdf' : isVideo ? 'video' : 'image'
     });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });

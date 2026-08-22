@@ -1,0 +1,383 @@
+DERAP CONSULT LIMITED
+
+Website Copy Deck
+
+Paste-ready text for a six-page website  |  Draft, August 2026
+
+How to use this document
+
+Each numbered section below is one page of the website. Copy the text into your website builder (Hostinger, Wix, Squarespace, Framer or similar), replace anything in square brackets with real details, and delete the amber build notes — they are instructions for you, not website text.
+
+Details to fill in before publishing
+
+Telephone: [+254 726 108 001]
+
+Email: [info@derapconsult.co.ke]
+
+Postal address: [P.O. Box 42254 - 00100, Nairobi]
+
+LinkedIn company page URL
+
+All [Year] fields and the Self Help Africa project name and country on the Track Record page
+
+The DRIVE implementing agency name — and confirmation that you may reference this ongoing assignment publicly
+
+Page 1 — Home
+
+SEO title: DERAP Consult Limited | Evaluation, Research & Data Analytics — Nairobi, Kenya
+
+Meta description: A Kenyan research and evaluation firm specialising in rigorous impact evaluation, advanced quantitative analysis and transparent public opinion research across Africa.
+
+Hero section
+
+Headline: Evidence that survives scrutiny.
+
+Subheadline: DERAP Consult is a Nairobi-based research and evaluation firm. We design and deliver programme evaluations, advanced quantitative analysis and public opinion research for organisations that need answers they can defend.
+
+Primary button: Request a proposal → (links to Contact)
+
+Secondary button: See our track record → (links to Track Record)
+
+Build note: no stock photo of people shaking hands. Use a clean data-visualisation image, a Kenyan field-research photograph you own the rights to, or a plain navy background with typography only.
+
+Credibility strip (single row beneath the hero)
+
+12+ years of evaluation experience  ·  12 countries  ·  OECD  ·  African Union  ·  World Bank-financed programmes  ·  Registered Kenyan firm
+
+Section: What we do
+
+Intro line: Four services, one standard of rigour.
+
+Card 1 — Evaluation & MEAL
+
+Baseline, midterm, endline and impact evaluations. MEAL system design, theories of change, third-party monitoring and data quality audits.
+
+Card 2 — Data analytics
+
+Advanced quantitative analysis — PSM, Difference-in-Differences, Regression Discontinuity, Instrumental Variables, PTSCS and RCT analysis — plus survey design, sampling and analysis subcontracting in STATA, R and SPSS.
+
+Card 3 — Public opinion research
+
+Issue, governance and citizen-satisfaction polling using random digit dialling and panel-based telephone designs, with full methodological disclosure and data protection compliance.
+
+Card 4 — Training
+
+Short courses and in-house capacity building in impact evaluation methods, MEAL design, survey sampling and applied STATA/R.
+
+Link beneath cards: Explore our services →
+
+Section: Why organisations work with us
+
+Rigour as the default. Quasi-experimental and experimental designs are our core competence, not an add-on. Where a credible counterfactual can be built, we build one — and where it cannot, we say so.
+
+Methods in the open. Every study we publish carries its methodology with it: sampling frame, weighting, response rates, question wording. If our numbers are worth trusting, our methods should be worth reading.
+
+Senior delivery. Our clients get the consultant they hired. Assignments are led directly by DERAP’s lead consultant, supported by vetted associates and trained field teams engaged per contract.
+
+Local firm, international standards. A registered Kenyan company with experience delivering for the OECD, the African Union and international NGOs across twelve countries.
+
+Closing call to action
+
+Headline: Have a study to commission?
+
+Text: Tell us what decision you need the evidence for, and we will tell you honestly whether we are the right firm for it.
+
+Button: Get in touch →
+
+Page 2 — About
+
+SEO title: About DERAP Consult | Research & Evaluation Firm in Nairobi
+
+Meta description: DERAP Consult Limited is a Kenyan research and evaluation firm led by John Ngotho Kinyua, a monitoring and evaluation specialist with over twelve years of international experience.
+
+Who we are
+
+DERAP Consult Limited is a Kenyan research and evaluation firm registered in 2019 and based in Nairobi. We generate credible evidence for development and public decision-making through rigorous programme evaluation, advanced quantitative analysis, transparent public opinion research and capacity building.
+
+We work with international and national NGOs, foundations, multilateral programmes, county and national government agencies, and research institutions — most often at the point where a programme needs to know not just what happened, but what difference it made.
+
+How we work
+
+We keep a lean permanent structure and build each assignment team around the study it has to deliver: DERAP’s lead consultant plus vetted associate researchers, statisticians, and trained, supervised field teams. That keeps our overheads low, our quality control tight, and our senior expertise on the assignment rather than on a proposal cover page.
+
+Every study begins with a written design and sampling memo before a single respondent is contacted, and every deliverable is reviewed by a second reader before it leaves the firm.
+
+Our lead consultant
+
+John Ngotho Kinyua, MA — Founder and Lead Consultant
+
+John is a monitoring and evaluation specialist with over twelve years of experience across more than a dozen countries in Africa and Europe. His work spans agriculture and food systems, livestock and pastoral economies, financial inclusion and enterprise development, resilience programming in fragile contexts, clean energy, gender, and national statistical systems.
+
+He has led or co-led evaluations for the African Union’s Ecological and Organic Agriculture Initiative across nine countries, Heifer International’s East Africa Dairy Development programme in Kenya, Uganda and Tanzania, and the World Bank-financed DRIVE programme supporting pastoral economies in the Horn of Africa. While working with the OECD in Paris, he conducted an impact evaluation of PARIS21’s National Strategies for the Development of Statistics programme using a Pooled Time-Series Cross-Sectional design.
+
+Before consulting, John was Head of Monitoring and Evaluation at Equity Group Foundation, where he oversaw six national programmes and designed the foundation’s M&E system and its quasi-experimental evaluation designs.
+
+He holds an MA in Development Management from Ruhr Universität Bochum, Germany, and a BSc in Applied Statistics with Information Technology from Maseno University, Kenya. He is completing a PhD in Development Studies at Mount Kenya University, where he also teaches.
+
+Optional button: Download full CV (upload a PDF)
+
+What we stand for
+
+Independence. We disclose who funds our research. Every time, without exception.
+
+Rigour before narrative. We report what the data supports, including when it is inconvenient for the programme or for us.
+
+Transparency of method. Our methodology is published alongside our findings so that anyone can judge the strength of the evidence for themselves.
+
+Integrity of data. Field work is supervised, back-checked and audited. We have zero tolerance for fabricated data.
+
+Respect for respondents. Informed consent, secure data handling and compliance with Kenya’s Data Protection Act are designed into every study, not added at the end.
+
+Page 3 — Services
+
+SEO title: Services | Impact Evaluation, MEAL Systems, Data Analytics & Polling — DERAP Consult
+
+Meta description: Programme evaluation, MEAL system design, advanced quantitative analysis, survey research and professional training from a Nairobi-based research firm.
+
+Intro: We offer four services. They share one discipline: the design comes before the data, and the method is documented before the fieldwork starts.
+
+1. Evaluation and MEAL systems
+
+We design and deliver evaluations that stand up to donor review, board scrutiny and peer challenge.
+
+Baseline, midterm, endline and impact evaluations
+
+Experimental and quasi-experimental impact designs where a credible counterfactual is possible
+
+MEAL system design, theories of change, results frameworks and indicator protocols
+
+Third-party monitoring, verification and data quality audits
+
+Needs assessments, formative studies, gender analyses, and market and value-chain studies
+
+Typical clients: international and national NGOs, foundations, multilateral programmes, county governments, and international firms seeking a local evaluation partner.
+
+2. Data analytics and research services
+
+Some clients do not need a full evaluation. They need the analysis done properly.
+
+Impact estimation using Propensity Score Matching, Difference-in-Differences, Regression Discontinuity, Instrumental Variables, pipeline designs, Pooled Time-Series Cross-Sectional analysis and RCT analysis
+
+Survey design, sample size determination, sampling frames and weighting
+
+Qualitative analysis and mixed-methods synthesis
+
+Analysis subcontracting for consulting firms and academic teams in STATA, R and SPSS, delivered with documented, reproducible code
+
+Data quality audits and data system reviews
+
+3. Public opinion and social research
+
+We run telephone-based survey research built on documented sampling and published methods.
+
+Issue, governance and citizen-satisfaction polling
+
+Random digit dialling with screening and post-stratification weighting to national benchmarks
+
+Panel-based county research, using consented respondent panels recruited in the field
+
+Omnibus surveys and perception studies for development, public sector and commercial clients
+
+Our survey work complies with Kenya’s Data Protection Act (2019), including registration and informed consent protocols, and with the disclosure requirements of the Publication of Electoral Opinion Polls Act (2012). We publish sponsor, sample, method, question wording and margin of error with every released result.
+
+4. Training and capacity building
+
+Short courses in impact evaluation methods, MEAL system design and survey sampling
+
+Applied STATA and R for programme staff and researchers
+
+In-house capacity building for client M&E units and national programme teams
+
+Closing CTA: Not sure which of these you need? Describe the decision you are trying to make and we will suggest a design — or tell you if a study is not the right tool. [Contact us]
+
+Page 4 — Track Record
+
+SEO title: Track Record | Evaluations Across 12 Countries — DERAP Consult
+
+Meta description: Assignments led by DERAP’s lead consultant for the OECD, African Union, Heifer International, Self Help Africa, ICRAF, Farm Africa and others across Africa and Europe.
+
+DERAP corporate assignments
+
+Data Audit Trail — East Africa Dairy Development (EADD) Project
+
+Client: Heifer International  ·  Kenya / East Africa
+
+Independent audit of project data systems and trails, assessing data integrity, flow, storage and use across the EADD monitoring system, with recommendations for data quality assurance.
+
+Assignments led by our lead consultant
+
+The assignments below were led or co-led by John Ngotho Kinyua under prior or concurrent professional affiliations, principally Agile Consulting Africa. They are presented as evidence of the technical leadership DERAP brings to every engagement. Client references are available on request.
+
+Assignment
+
+Client / funder
+
+Country
+
+Period
+
+Annual project monitoring and evaluation, De-risking, Inclusion and Value Enhancement of Pastoral Economies in the Horn of Africa (DRIVE)
+
+ZEP-RE / World Bank-financed
+
+Somalia
+
+2026-present
+
+Final evaluation, Strengthening of the Competitiveness of the Cassava Value Chain in Kenya Project.
+
+Self Help Africa
+
+Kenya
+
+2024
+
+Impact evaluation of the NSDS programme, using Pooled Time-Series Cross-Sectional analysis
+
+OECD / PARIS21
+
+Global programme (based in Paris)
+
+2016
+
+Baseline and final evaluations, Ecological and Organic Agriculture Initiative
+
+African Union
+
+Senegal, Nigeria, Mali, Benin, Kenya, Tanzania, Uganda, Ethiopia, Rwanda
+
+2019
+
+Midterm and final evaluations, East Africa Dairy Development
+
+Heifer International
+
+Kenya, Uganda, Tanzania
+
+2018
+
+Gender analysis, Digital Agricultural Advisory Services (DAAS)
+
+Tanager
+
+Ethiopia
+
+2022
+
+Skills and knowledge gap analysis, eMobility project
+
+WE!Hub / Siemens Stiftung
+
+Kenya
+
+2021
+
+Agribusiness Investment for Market Stimulation (AIMS) research
+
+EAGC / Global Communities
+
+Kenya, Tanzania, Malawi
+
+2017
+
+Sorghum and green grams value chain evaluation; outcome mapping exercise
+
+Farm Africa
+
+Kenya
+
+2014
+
+Baseline study, Evergreen Agriculture Project
+
+World Agroforestry Centre (ICRAF)
+
+Kenya, Tanzania, Malawi
+
+2011
+
+M&E system design and quasi-experimental evaluation across six national programmes
+
+Equity Group Foundation
+
+Kenya
+
+2011-2014
+
+Sectors
+
+Agriculture, agribusiness and food systems  ·  Livestock, dairy and pastoral economies  ·  Financial inclusion and enterprise development  ·  Resilience and de-risking in fragile contexts  ·  Clean energy and eMobility  ·  Gender  ·  National statistical systems and data governance
+
+Countries
+
+Kenya  ·  Uganda  ·  Tanzania  ·  Ethiopia  ·  Rwanda  ·  Somalia  ·  Malawi  ·  Senegal  ·  Nigeria  ·  Mali  ·  Benin  ·  France
+
+Page 5 — Insights
+
+SEO title: Insights & Methods Notes | DERAP Consult
+
+Meta description: Methods notes and commentary on evaluation design, sampling, and evidence use in development programming.
+
+Intro: Short notes on how we do the work — evaluation design, sampling, weighting, and the honest limits of what data can tell us. Written for programme managers and commissioners, not only for methodologists.
+
+Build note: publish two or three pieces before launch, then one per month. An empty blog is worse than no blog. Suggested opening set, all of which you can write from existing knowledge:
+
+“When you cannot randomise: choosing between PSM, DiD and Regression Discontinuity.” A plain-language decision guide for programme managers commissioning impact evaluations. This is your single strongest credibility piece — few Kenyan firms can write it convincingly.
+
+“What a data quality audit actually looks for.” Draw on the Heifer EADD data audit trail assignment. Useful, practical, and it markets a service almost nobody advertises.
+
+“Why phone surveys in Kenya need weighting — and what happens when they don’t.” Explains multi-SIM bias and post-stratification against KNBS benchmarks. Positions DERAP as the methodologically serious option before your first poll is ever published.
+
+Build note: later, once you publish polls, every release gets a post here with the full methodology annex attached as a PDF.
+
+Page 6 — Contact
+
+SEO title: Contact DERAP Consult | Nairobi, Kenya
+
+Meta description: Contact DERAP Consult Limited for evaluations, survey research, data analysis and training. Nairobi, Kenya.
+
+Headline: Let’s talk about your study.
+
+Text: Tell us what you need to find out, who needs to be convinced, and roughly when. We will respond within two working days with an honest view of whether DERAP is the right firm for the assignment.
+
+Form fields: Name  ·  Organisation  ·  Email  ·  Phone (optional)  ·  Type of enquiry (dropdown: Evaluation / MEAL system · Data analysis · Survey or polling · Training · Other)  ·  Your message
+
+Details block
+
+DERAP Consult Limited
+
+[P.O. Box 42254–00100], Nairobi, Kenya
+
+Email: [info@derapconsult.co.ke]
+
+Tel: [+254 726 108 001]
+
+LinkedIn: [company page URL]
+
+Registered in Kenya ·  Tax compliance certificate available on request
+
+Build note: use the builder’s form tool so submissions reach your inbox — do not simply display an email address. Test the form before you send the URL to anyone.
+
+Footer (every page)
+
+Column 1: DERAP Consult Limited — Research · Evaluation · Data Analytics · Public Opinion · Capacity Building
+
+Column 2: Home · About · Services · Track Record · Insights · Contact
+
+Column 3: [info@derapconsult.co.ke] · [+254 726 108 001] · Nairobi, Kenya
+
+Bottom line: © 2026 DERAP Consult Limited. Registered in Kenya. Privacy Policy.
+
+Build note: you need a real Privacy Policy page before you collect any survey or form data — it is a Data Protection Act requirement, not a formality. Draft it alongside your ODPC registration.
+
+Copy Rules — read before editing anything
+
+Never let the builder’s AI rewrite these pages. It will replace specific claims with phrases such as “innovative solutions”, “cutting-edge insights”, “empowering communities” and “data-driven excellence”. For a firm whose entire pitch is rigour, that language actively destroys credibility with programme officers who read fifty proposals a month.
+
+Do not inflate the team. “We” here means a firm with a lead consultant and an associate network — which is what the copy says. Do not add a fictional “our team of experts” page or stock photographs of people who do not work for you. It is the most common lie on consultancy websites and it is discovered in the first meeting.
+
+Keep the affiliation disclosure on the Track Record page. It is what makes the portfolio verifiable rather than disputable.
+
+Do not claim election-polling experience until you have it. The Services page describes the capability and the compliance standard, not a record. Add polls to the Track Record page after your pilot.
+
+Two honest omissions to note: the site currently has no case studies with results and no client testimonials. Both are more persuasive than anything above. Ask two past clients for a short written quote you are permitted to publish, and write up one assignment as a proper case study — problem, design, method, finding, and the decision it informed — as soon as you have clearance to do so.

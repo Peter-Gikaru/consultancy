@@ -53,9 +53,7 @@ export default function HeroFullWidthCarousel() {
       const res = await fetch('/api/posts');
       const data = await res.json();
       if (data.success) serverPosts = data.posts;
-    } catch (e) {
-      // static export fallback
-    }
+    } catch (e) 
 
     const custom = mediaStore.getCustomPosts();
     const combinedCustomServer = [...custom, ...serverPosts];
@@ -81,7 +79,6 @@ export default function HeroFullWidthCarousel() {
     }
   }, []);
 
-  // Auto slide rotation every 6 seconds
   useEffect(() => {
     if (isPaused || slides.length <= 1) return;
 
@@ -141,7 +138,7 @@ export default function HeroFullWidthCarousel() {
         overflow: 'hidden'
       }}
     >
-      {/* Background Image with Dark Gradient Overlay */}
+      
       {slides.map((slide, idx) => {
         const isActive = idx === currentIndex;
         return (
@@ -170,7 +167,7 @@ export default function HeroFullWidthCarousel() {
               }}
               quality={95}
             />
-            {/* Cinematic Gradient Overlays for Maximum Text Legibility */}
+            
             <div style={{
               position: 'absolute',
               inset: 0,
@@ -185,7 +182,6 @@ export default function HeroFullWidthCarousel() {
         );
       })}
 
-      {/* Main Content Overlay Container */}
       <div
         className="container"
         style={{
@@ -216,7 +212,6 @@ export default function HeroFullWidthCarousel() {
             {currentSlide.subheadline}
           </h1>
 
-          {/* CTA Button */}
           <div>
             <Link
               href={currentSlide.ctaLink || '/services'}
@@ -240,7 +235,6 @@ export default function HeroFullWidthCarousel() {
         </div>
       </div>
 
-      {/* Left Arrow Button */}
       <button
         onClick={handlePrev}
         aria-label="Previous Slide"
@@ -275,7 +269,6 @@ export default function HeroFullWidthCarousel() {
         <ChevronLeft size={28} />
       </button>
 
-      {/* Right Arrow Button */}
       <button
         onClick={handleNext}
         aria-label="Next Slide"
@@ -310,7 +303,6 @@ export default function HeroFullWidthCarousel() {
         <ChevronRight size={28} />
       </button>
 
-      {/* Bottom Horizontal Bar Indicators (Matching Oxford Policy Management Inspo) */}
       <div
         style={{
           position: 'absolute',

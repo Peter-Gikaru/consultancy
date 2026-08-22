@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { CheckCircle2, XCircle, ShieldCheck, Zap, Layers, RefreshCw } from 'lucide-react';
 
 export default function EmbeddedVsFlyInInteractive() {
-  const [viewMode, setViewMode] = useState('compare'); // 'compare', 'embedded', 'flyin'
+  const [viewMode, setViewMode] = useState('compare'); 
 
   return (
     <div style={{ backgroundColor: '#FFFFFF', borderRadius: '16px', padding: '40px', border: '1px solid #E2E8F0', boxShadow: '0 12px 32px rgba(0,0,0,0.05)' }}>
-      {/* Header & Toggle */}
+      
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', marginBottom: '36px' }}>
         <div>
           <span style={{ color: '#1E7B4A', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.85rem' }}>
@@ -19,7 +19,6 @@ export default function EmbeddedVsFlyInInteractive() {
           </h3>
         </div>
 
-        {/* View Switcher Controls */}
         <div style={{ display: 'flex', backgroundColor: '#F1F5F9', padding: '4px', borderRadius: '30px' }}>
           <button
             onClick={() => setViewMode('compare')}
@@ -69,9 +68,8 @@ export default function EmbeddedVsFlyInInteractive() {
         </div>
       </div>
 
-      {/* Grid Comparison */}
       <div className="grid-2" style={{ gap: '28px' }}>
-        {/* Traditional Fly-In Model */}
+        
         {(viewMode === 'compare' || viewMode === 'flyin') && (
           <div style={{
             backgroundColor: '#FFF5F5',
@@ -96,25 +94,25 @@ export default function EmbeddedVsFlyInInteractive() {
 
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', color: '#742A2A', fontSize: '0.975rem' }}>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#E53E3E', fontWeight: 'bold' }}>✕</span>
+                <XCircle size={18} color="#E53E3E" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Short 2-Week Missions:</strong> Consultants fly in, hold brief interviews, and immediately leave.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#E53E3E', fontWeight: 'bold' }}>✕</span>
+                <XCircle size={18} color="#E53E3E" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Off-the-Shelf Templates:</strong> Standard global reports that ignore local political nuances.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#E53E3E', fontWeight: 'bold' }}>✕</span>
+                <XCircle size={18} color="#E53E3E" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>PDF Reports on Shelves:</strong> Deliverables end at report presentation without implementation support.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#E53E3E', fontWeight: 'bold' }}>✕</span>
+                <XCircle size={18} color="#E53E3E" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>No Local Capacity Built:</strong> Civil servants gain zero skills after consultants depart.
                 </div>
@@ -128,7 +126,6 @@ export default function EmbeddedVsFlyInInteractive() {
           </div>
         )}
 
-        {/* Built on Site Embedded Model */}
         {(viewMode === 'compare' || viewMode === 'embedded') && (
           <div style={{
             backgroundColor: '#F0FFF4',
@@ -144,35 +141,35 @@ export default function EmbeddedVsFlyInInteractive() {
                   <CheckCircle2 size={24} />
                 </div>
                 <h4 style={{ margin: 0, color: '#22543D', fontSize: '1.25rem', fontFamily: 'var(--font-inter)', fontWeight: '700' }}>
-                  "Built on Site" Embedded TA
+                  &ldquo;Built on Site&rdquo; Embedded TA
                 </h4>
               </div>
               <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#276749', backgroundColor: '#C6F6D5', padding: '4px 10px', borderRadius: '12px' }}>
-                ⭐ Recommended Model
+                Recommended Model
               </span>
             </div>
 
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', color: '#22543D', fontSize: '0.975rem' }}>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#38A169', fontWeight: 'bold' }}>✓</span>
+                <CheckCircle2 size={18} color="#38A169" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Resident Local Teams:</strong> Consultants physically based inside ministry offices full-time.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#38A169', fontWeight: 'bold' }}>✓</span>
+                <CheckCircle2 size={18} color="#38A169" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Co-Designed Policies:</strong> Formulated in partnership with resident civil servants and communities.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#38A169', fontWeight: 'bold' }}>✓</span>
+                <CheckCircle2 size={18} color="#38A169" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Hands-on Execution:</strong> We monitor, adapt, and refine policies during live implementation.
                 </div>
               </li>
               <li style={{ display: 'flex', gap: '10px' }}>
-                <span style={{ color: '#38A169', fontWeight: 'bold' }}>✓</span>
+                <CheckCircle2 size={18} color="#38A169" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <div>
                   <strong>Permanent Skill Transfer:</strong> Direct daily mentoring for ministry staff so capacity lasts.
                 </div>

@@ -32,7 +32,7 @@ export default function RadialGaugeMetric({ percentage = 94, label = "Recovery R
     <div ref={containerRef} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
       <div style={{ position: 'relative', width: '72px', height: '72px', flexShrink: 0 }}>
         <svg width="72" height="72" viewBox="0 0 72 72" style={{ transform: 'rotate(-90deg)' }}>
-          {/* Background circle */}
+          
           <circle
             cx="36"
             cy="36"
@@ -41,7 +41,7 @@ export default function RadialGaugeMetric({ percentage = 94, label = "Recovery R
             stroke="var(--border-light)"
             strokeWidth={strokeWidth}
           />
-          {/* Animated Foreground Arc */}
+          
           <circle
             cx="36"
             cy="36"
@@ -58,7 +58,6 @@ export default function RadialGaugeMetric({ percentage = 94, label = "Recovery R
           />
         </svg>
 
-        {/* Center Percentage Display */}
         <div style={{
           position: 'absolute',
           inset: 0,

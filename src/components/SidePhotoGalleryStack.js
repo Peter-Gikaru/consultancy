@@ -111,14 +111,13 @@ export default function SidePhotoGalleryStack({ items = [] }) {
 
   return (
     <div className="side-filmstrip-container">
-      {/* Filmstrip Main Viewer Stage */}
+      
       <div className="filmstrip-viewer">
-        {/* Active Badge */}
+        
         <div className="filmstrip-active-badge">
-          ⭐ {activeItem.category || 'Field Dispatch'}
+          {activeItem.category || 'Field Dispatch'}
         </div>
 
-        {/* Media Preview */}
         {activeItem.mediaType === 'video' ? (
           <video
             src={activeItem.mediaUrl || activeItem.image}
@@ -143,7 +142,6 @@ export default function SidePhotoGalleryStack({ items = [] }) {
           background: 'linear-gradient(transparent 30%, rgba(15, 23, 42, 0.85))'
         }} />
 
-        {/* Gallery Navigation Controls */}
         <div style={{
           position: 'absolute',
           bottom: '20px',
@@ -207,7 +205,6 @@ export default function SidePhotoGalleryStack({ items = [] }) {
         </div>
       </div>
 
-      {/* Horizontal Photo Gallery Filmstrip Bar */}
       <div className="filmstrip-bar">
         {galleryItems.map((item, idx) => {
           const isActive = idx === selectedIndex;
@@ -236,7 +233,6 @@ export default function SidePhotoGalleryStack({ items = [] }) {
         })}
       </div>
 
-      {/* Pop-Up Details Card (Popping Up on Photo Selection / Scroll) */}
       <div key={activeItem.id || selectedIndex} className="pop-up-detail-card" style={{ marginTop: '20px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

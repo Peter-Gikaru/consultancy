@@ -1,342 +1,338 @@
 export const siteData = {
   siteInfo: {
-    brandName: "Meridian Evaluation & Advisory",
-    tagline: "Project Evaluation & Consultancy That Brings Clarity to Complexity.",
-    shortName: "Meridian",
-    contactEmail: "advisor@meridianadvisory.com",
-    contactPhone: "+1 (800) 555-0199",
-    mainOffice: "Boston & London Hubs",
-    copyright: `© ${new Date().getFullYear()} Meridian Evaluation & Advisory LLC. All rights reserved.`
+    brandName: "DERAP Consult Limited",
+    tagline: "Evaluation, Research & Data Analytics",
+    location: "Nairobi, Kenya",
+    registrationInfo: "Registered in Kenya (2019) · Tax compliance certificate available on request",
+    contactPhone: "+254 726 108 001",
+    contactEmail: "info@derapconsult.co.ke",
+    postalAddress: "P.O. Box 42254 - 00100, Nairobi",
+    linkedInUrl: "https://www.linkedin.com/company/derap-consult-limited",
+    cvUrl: "/docs/John_Ngotho_Kinyua_CV.pdf",
+    copyright: `© 2026 DERAP Consult Limited. Registered in Kenya. Privacy Policy.`
   },
 
   heroConfig: {
-    badgeText: "",
-    headline: "Project Evaluation & Consultancy That Brings Clarity to Complexity.",
-    subheadline: "We help organisations assess their projects, identify risks, and make confident strategic decisions with complete independence.",
-    ctaPrimaryText: "Book a consultation",
+    headline: "Evidence that survives scrutiny.",
+    subheadline: "DERAP Consult is a Nairobi-based research and evaluation firm. We design and deliver programme evaluations, advanced quantitative analysis and public opinion research for organisations that need answers they can defend.",
+    ctaPrimaryText: "Request a proposal →",
     ctaPrimaryLink: "/contact",
-    ctaSecondaryText: "Explore our services",
-    ctaSecondaryLink: "/services",
-    reassuranceText: ""
+    ctaSecondaryText: "See our track record →",
+    ctaSecondaryLink: "/track-record"
   },
 
-  spotlightCarousel: [
-    {
-      id: "spotlight-1",
-      badge: "Team & Morale",
-      headline: "Team & Morale",
-      subheadline: "Eliminating Friction & Re-Energizing Burned-Out Teams",
-      metric: "4.8/5 Team Health Index",
-      description: "Re-aligning leadership and engineering around clear, human-sized goals that restore psychological safety and speed.",
-      tag: "Active Focus Case",
-      image: "/images/contact-hero.jpg",
-      alt: "Team members engaging in collaborative alignment session",
-      linkText: "Explore Framework →",
-      spotlightButtonText: "Spotlight ↑"
-    },
-    {
-      id: "spotlight-2",
-      badge: "Vendor Accountability",
-      headline: "Vendor Accountability",
-      subheadline: "Honest Technical Audits of Third-Party Partners",
-      metric: "100% UNBIASED INDEPENDENCE",
-      description: "Unbiased technical verification of vendor claims, ensuring you only pay for true progress and verifiable code or infrastructure.",
-      tag: "Vendor Audit Case",
-      image: "/images/policy-meeting.jpg",
-      alt: "Reviewing vendor documentation and metrics",
-      linkText: "Explore Framework →",
-      spotlightButtonText: "Spotlight ↑"
-    },
-    {
-      id: "spotlight-3",
-      badge: "Project Rescue",
-      headline: "Project Rescue",
-      subheadline: "Turning Stalled Projects Into Predictable Deliveries",
-      metric: "94% ON-TIME RECOVERY RATE",
-      description: "We diagnose root causes of delay within 14 days, restructuring team workflows and vendor agreements to restore momentum.",
-      tag: "Rescue Case",
-      image: "/images/team-meeting.jpg",
-      alt: "Advisors reviewing project roadmap around wooden table",
-      linkText: "Explore Framework →",
-      spotlightButtonText: "Spotlight ↑"
-    },
-    {
-      id: "spotlight-4",
-      badge: "Risk & Governance",
-      headline: "Risk & Governance",
-      subheadline: "Exposing Blindspots Before They Become Crises",
-      metric: "$12M AVERAGE CAPITAL SAVED",
-      description: "Independent audit of technical architectures, budget allocations, and compliance gaps to shield your organization from sudden shocks.",
-      tag: "Governance Case",
-      image: "/images/expertise-collage.jpg",
-      alt: "Strategic risk assessment session",
-      linkText: "Explore Framework →",
-      spotlightButtonText: "Spotlight ↑"
-    }
+  credibilityStrip: [
+    "12+ years of evaluation experience",
+    "12 countries",
+    "OECD",
+    "African Union",
+    "World Bank-financed programmes",
+    "Registered Kenyan firm"
   ],
 
-  spotlightControlText: "Auto-rotating every 5 seconds • Hover to pause • Click or swipe vertically to focus.",
+  homeIntroServices: {
+    title: "Four services, one standard of rigour.",
+    cards: [
+      {
+        id: "eval-meal",
+        title: "Evaluation & MEAL",
+        description: "Baseline, midterm, endline and impact evaluations. MEAL system design, theories of change, third-party monitoring and data quality audits.",
+        link: "/services#evaluation"
+      },
+      {
+        id: "data-analytics",
+        title: "Data analytics",
+        description: "Advanced quantitative analysis — PSM, Difference-in-Differences, Regression Discontinuity, Instrumental Variables, PTSCS and RCT analysis — plus survey design, sampling and analysis subcontracting in STATA, R and SPSS.",
+        link: "/services#data-analytics"
+      },
+      {
+        id: "public-opinion",
+        title: "Public opinion research",
+        description: "Issue, governance and citizen-satisfaction polling using random digit dialling and panel-based telephone designs, with full methodological disclosure and data protection compliance.",
+        link: "/services#public-opinion"
+      },
+      {
+        id: "training",
+        title: "Training",
+        description: "Short courses and in-house capacity building in impact evaluation methods, MEAL design, survey sampling and applied STATA/R.",
+        link: "/services#training"
+      }
+    ]
+  },
 
-  homeIntro: {
-    badge: "",
-    title: "We Are The Advisor We Wished We Had When Things Got Tough.",
-    leadText: "Most consultancies sell manpower hours or thick 200-page slide decks that gather dust. We offer relief from anxiety.",
-    paragraphs: [
-      "When a critical project is on the line, you don't need buzzwords or high-pressure sales pitches. You need a seasoned partner who sits across the table, listens quietly, asks the right questions, and gives you raw, honest clarity.",
-      "We've spent decades in the field—rescuing derailed software launches, auditing public sector infrastructure, and recalibrating enterprise transformations. We bring grounded warmth, calm authority, and zero drama."
+  whyUsPillars: {
+    title: "Why organisations work with us",
+    items: [
+      {
+        title: "Rigour as the default",
+        description: "Quasi-experimental and experimental designs are our core competence, not an add-on. Where a credible counterfactual can be built, we build one — and where it cannot, we say so."
+      },
+      {
+        title: "Methods in the open",
+        description: "Every study we publish carries its methodology with it: sampling frame, weighting, response rates, question wording. If our numbers are worth trusting, our methods should be worth reading."
+      },
+      {
+        title: "Senior delivery",
+        description: "Our clients get the consultant they hired. Assignments are led directly by DERAP’s lead consultant, supported by vetted associates and trained field teams engaged per contract."
+      },
+      {
+        title: "Local firm, international standards",
+        description: "A registered Kenyan company with experience delivering for the OECD, the African Union and international NGOs across twelve countries."
+      }
+    ]
+  },
+
+  closingCta: {
+    headline: "Have a study to commission?",
+    text: "Tell us what decision you need the evidence for, and we will tell you honestly whether we are the right firm for it.",
+    buttonText: "Get in touch →",
+    buttonLink: "/contact"
+  },
+
+  aboutConfig: {
+    seoTitle: "About DERAP Consult | Research & Evaluation Firm in Nairobi",
+    seoDescription: "DERAP Consult Limited is a Kenyan research and evaluation firm led by John Ngotho Kinyua, a monitoring and evaluation specialist with over twelve years of international experience.",
+    whoWeAre: [
+      "DERAP Consult Limited is a Kenyan research and evaluation firm registered in 2019 and based in Nairobi. We generate credible evidence for development and public decision-making through rigorous programme evaluation, advanced quantitative analysis, transparent public opinion research and capacity building.",
+      "We work with international and national NGOs, foundations, multilateral programmes, county and national government agencies, and research institutions — most often at the point where a programme needs to know not just what happened, but what difference it made."
     ],
-    pillars: [
-      { title: "Quiet Independence", description: "We have no vendor kickbacks or hidden agendas. Our only allegiance is to your peace of mind." },
-      { title: "Human-First Diagnostics", description: "Projects don't fail because of Gantt charts; they fail because people are scared to speak truth to power." },
-      { title: "Actionable Simplicity", description: "You get clear 5-page action blueprints, not bloated reports designed to extend our contract." }
+    howWeWork: [
+      "We keep a lean permanent structure and build each assignment team around the study it has to deliver: DERAP’s lead consultant plus vetted associate researchers, statisticians, and trained, supervised field teams. That keeps our overheads low, our quality control tight, and our senior expertise on the assignment rather than on a proposal cover page.",
+      "Every study begins with a written design and sampling memo before a single respondent is contacted, and every deliverable is reviewed by a second reader before it leaves the firm."
+    ],
+    leadConsultant: {
+      name: "John Ngotho Kinyua, MA",
+      title: "Founder and Lead Consultant",
+      bio: [
+        "John is a monitoring and evaluation specialist with over twelve years of experience across more than a dozen countries in Africa and Europe. His work spans agriculture and food systems, livestock and pastoral economies, financial inclusion and enterprise development, resilience programming in fragile contexts, clean energy, gender, and national statistical systems.",
+        "He has led or co-led evaluations for the African Union’s Ecological and Organic Agriculture Initiative across nine countries, Heifer International’s East Africa Dairy Development programme in Kenya, Uganda and Tanzania, and the World Bank-financed DRIVE programme supporting pastoral economies in the Horn of Africa. While working with the OECD in Paris, he conducted an impact evaluation of PARIS21’s National Strategies for the Development of Statistics programme using a Pooled Time-Series Cross-Sectional design.",
+        "Before consulting, John was Head of Monitoring and Evaluation at Equity Group Foundation, where he oversaw six national programmes and designed the foundation’s M&E system and its quasi-experimental evaluation designs.",
+        "He holds an MA in Development Management from Ruhr Universität Bochum, Germany, and a BSc in Applied Statistics with Information Technology from Maseno University, Kenya. He is completing a PhD in Development Studies at Mount Kenya University, where he also teaches."
+      ]
+    },
+    values: [
+      {
+        title: "Independence",
+        description: "We disclose who funds our research. Every time, without exception."
+      },
+      {
+        title: "Rigour before narrative",
+        description: "We report what the data supports, including when it is inconvenient for the programme or for us."
+      },
+      {
+        title: "Transparency of method",
+        description: "Our methodology is published alongside our findings so that anyone can judge the strength of the evidence for themselves."
+      },
+      {
+        title: "Integrity of data",
+        description: "Field work is supervised, back-checked and audited. We have zero tolerance for fabricated data."
+      },
+      {
+        title: "Respect for respondents",
+        description: "Informed consent, secure data handling and compliance with Kenya’s Data Protection Act are designed into every study, not added at the end."
+      }
     ]
   },
 
   servicesConfig: {
-    overviewTitle: "Services Built Around Your Realities, Not Industry Jargon",
-    overviewSubtitle: "Select how you are feeling right now to see the exact support framework designed for your situation.",
-    
-    emotionalPains: [
+    seoTitle: "Services | Impact Evaluation, MEAL Systems, Data Analytics & Polling — DERAP Consult",
+    seoDescription: "Programme evaluation, MEAL system design, advanced quantitative analysis, survey research and professional training from a Nairobi-based research firm.",
+    intro: "We offer four services. They share one discipline: the design comes before the data, and the method is documented before the fieldwork starts.",
+    list: [
       {
-        id: "pain-stalled",
-        buttonLabel: "My project is off track or stalled",
-        title: "When deadlines keep slipping and no one can explain why...",
-        diagnosisNote: "You are experiencing execution fatigue. You need an independent, rapid diagnostic that isolates bottlenecks without assigning corporate blame.",
-        recommendedServiceId: "service-rescue"
+        id: "evaluation",
+        number: "1",
+        title: "Evaluation and MEAL systems",
+        tagline: "We design and deliver evaluations that stand up to donor review, board scrutiny and peer challenge.",
+        items: [
+          "Baseline, midterm, endline and impact evaluations",
+          "Experimental and quasi-experimental impact designs where a credible counterfactual is possible",
+          "MEAL system design, theories of change, results frameworks and indicator protocols",
+          "Third-party monitoring, verification and data quality audits",
+          "Needs assessments, formative studies, gender analyses, and market and value-chain studies"
+        ],
+        typicalClients: "International and national NGOs, foundations, multilateral programmes, county governments, and international firms seeking a local evaluation partner."
       },
       {
-        id: "pain-risk",
-        buttonLabel: "I am worried about hidden risks",
-        title: "When you suspect critical flaws are being swept under the rug...",
-        diagnosisNote: "You are feeling accountability anxiety. You need a discreet 'gloves-off' risk audit to inspect code, finances, or compliance before launch.",
-        recommendedServiceId: "service-audit"
+        id: "data-analytics",
+        number: "2",
+        title: "Data analytics and research services",
+        tagline: "Some clients do not need a full evaluation. They need the analysis done properly.",
+        items: [
+          "Impact estimation using Propensity Score Matching (PSM), Difference-in-Differences (DiD), Regression Discontinuity (RDD), Instrumental Variables (IV), pipeline designs, Pooled Time-Series Cross-Sectional analysis (PTSCS) and RCT analysis",
+          "Survey design, sample size determination, sampling frames and weighting",
+          "Qualitative analysis and mixed-methods synthesis",
+          "Analysis subcontracting for consulting firms and academic teams in STATA, R and SPSS, delivered with documented, reproducible code",
+          "Data quality audits and data system reviews"
+        ],
+        typicalClients: "Consulting firms, academic research teams, and development partners requiring specialized quantitative econometric analysis."
       },
       {
-        id: "pain-burnout",
-        buttonLabel: "My team is burning out",
-        title: "When your best people are exhausted and demoralized...",
-        diagnosisNote: "You have structural friction. Over-engineered processes and unclear scope are killing morale. You need scope rationalization and human realignment.",
-        recommendedServiceId: "service-alignment"
+        id: "public-opinion",
+        number: "3",
+        title: "Public opinion and social research",
+        tagline: "We run telephone-based survey research built on documented sampling and published methods.",
+        items: [
+          "Issue, governance and citizen-satisfaction polling",
+          "Random digit dialling (RDD) with screening and post-stratification weighting to national benchmarks",
+          "Panel-based county research, using consented respondent panels recruited in the field",
+          "Omnibus surveys and perception studies for development, public sector and commercial clients"
+        ],
+        complianceNote: "Our survey work complies with Kenya’s Data Protection Act (2019), including registration and informed consent protocols, and with the disclosure requirements of the Publication of Electoral Opinion Polls Act (2012). We publish sponsor, sample, method, question wording and margin of error with every released result."
       },
       {
-        id: "pain-vendor",
-        buttonLabel: "I don't trust our vendor's progress reports",
-        title: "When progress updates sound green, but deliverables feel red...",
-        diagnosisNote: "You suffer from information asymmetry. You need independent technical verification to validate what has actually been built.",
-        recommendedServiceId: "service-vendor"
+        id: "training",
+        number: "4",
+        title: "Training and capacity building",
+        tagline: "Building internal research and evaluation capacity for teams across East Africa.",
+        items: [
+          "Short courses in impact evaluation methods, MEAL system design and survey sampling",
+          "Applied STATA and R for programme staff and researchers",
+          "In-house capacity building for client M&E units and national programme teams"
+        ]
       }
     ],
-
-    serviceList: [
-      {
-        id: "service-alignment",
-        iconName: "Users",
-        title: "Team & Morale",
-        tagline: "Eliminating Friction & Re-Energizing Burned-Out Teams",
-        image: "/images/team-meeting.jpg",
-        description: "Re-aligning leadership and engineering around clear, human-sized goals that restore psychological safety and speed.",
-        deliverables: [
-          "Role clarity & decision rights map",
-          "Process simplification workshop",
-          "90-day team morale & throughput index"
-        ],
-        idealFor: "Teams experiencing high turnover, conflict, or chronic burnout."
-      },
-      {
-        id: "service-vendor",
-        iconName: "FileCheck",
-        title: "Vendor Accountability",
-        tagline: "Honest Technical Audits of Third-Party Partners",
-        image: "/images/policy-meeting.jpg",
-        description: "Unbiased technical verification of vendor claims, ensuring you only pay for true progress and verifiable code or infrastructure.",
-        deliverables: [
-          "Independent code & delivery review",
-          "SLA compliance scoring",
-          "Vendor renegotiation advisory"
-        ],
-        idealFor: "Organizations managing external software agencies or general contractors."
-      },
-      {
-        id: "service-rescue",
-        iconName: "LifeBuoy",
-        title: "Project Rescue",
-        tagline: "Turning Stalled Projects Into Predictable Deliveries",
-        image: "/images/hero-kenya.jpg",
-        description: "We diagnose root causes of delay within 14 days, restructuring team workflows and vendor agreements to restore momentum.",
-        deliverables: [
-          "Root cause friction matrix",
-          "Simplified 30-day recovery blueprint",
-          "Executive briefing for board & key stakeholders"
-        ],
-        idealFor: "Projects 3+ months behind schedule or exceeding budget thresholds."
-      },
-      {
-        id: "service-audit",
-        iconName: "ShieldAlert",
-        title: "Risk & Governance",
-        tagline: "Exposing Blindspots Before They Become Crises",
-        image: "/images/expertise-collage.jpg",
-        description: "Independent audit of technical architectures, budget allocations, and compliance gaps to shield your organization from sudden shocks.",
-        deliverables: [
-          "Discreet vulnerability audit",
-          "Vendor compliance verification",
-          "Risk mitigation playbook"
-        ],
-        idealFor: "M&A integrations, new platform rollouts, and infrastructure investments."
-      }
-    ],
-
-    methodology: {
-      title: "Our Evaluation Methodology: Simple, Transparent, Human",
-      subtitle: "No mysterious black boxes or jargon. Here is exactly how we work with you.",
-      steps: [
-        {
-          number: "01",
-          name: "Listen & Observe",
-          description: "We start by listening to your team in confidential 1-on-1 conversations, understanding the human context behind the numbers."
-        },
-        {
-          number: "02",
-          name: "Verify & Diagnose",
-          description: "We review raw data, technical artifacts, and workflows to separate true systemic issues from temporary friction."
-        },
-        {
-          number: "03",
-          name: "Co-Design & Stabilize",
-          description: "We craft simple, realistic recommendations alongside your team, ensuring immediate buy-in and zero friction."
-        },
-        {
-          number: "04",
-          name: "Embed & Transfer",
-          description: "We stay by your side during rollout, transferring skills so your team remains strong long after we depart."
-        }
-      ]
-    }
+    closingCta: "Not sure which of these you need? Describe the decision you are trying to make and we will suggest a design — or tell you if a study is not the right tool."
   },
 
-  scarsStories: [
-    {
-      id: "scar-1",
-      title: "The $14M Platform Redesign That Ran Into a Wall",
-      clientType: "Enterprise Fintech • 18-Month Recovery",
-      impactMetric: "Launched 3 Months Early After Pivot",
-      image: "/images/kenya-health-case.jpg",
-      alt: "Project evaluation team reviewing software architecture blueprints",
-      failureScenario: "Where we started: The client was 9 months behind on a core platform overhaul. Morale was rock-bottom, and third-party vendors were blaming internal IT leadership.",
-      scaryMoment: "The scary pivot: Two weeks into our audit, we discovered the underlying architecture was completely sound—the bottleneck was an overly complex 14-step approval hierarchy that paralyzed developers.",
-      outcome: "How we fixed it together: We convinced leadership to strip away 10 approval gates, establishing a delegated sign-off protocol. The team delivered the full platform in 6 months with zero staff turnover."
-    },
-    {
-      id: "scar-2",
-      title: "The Multi-County Logistics Overhaul Near Collapse",
-      clientType: "Public Health Infrastructure • 12-Month Engagement",
-      impactMetric: "40% Reduction in Stock-Outs",
-      image: "/images/climate-project.jpg",
-      alt: "Field operations team inspecting distribution warehouse",
-      failureScenario: "Where we started: A critical medical distribution program across 12 counties was suffering severe inventory stock-outs, despite heavy financial investment.",
-      scaryMoment: "The scary pivot: Standard reports blamed bad roads, but our on-the-ground interviews revealed field officers were afraid to report real inventory numbers due to punitive audit policies.",
-      outcome: "How we fixed it together: We co-designed a zero-penalty reporting system and real-time mobile tracking dashboard. Stock-outs dropped 40% within 90 days."
-    }
-  ],
-
-  aboutConfig: {
-    title: "We Built Meridian Because Consultancy Needed More Heart and Less Hype.",
-    subtitle: "A boutique firm founded by former enterprise leaders who believed that high-trust guidance matters more than billable hours.",
-    philosophyTitle: "Our Purpose & Philosophy",
-    philosophyParagraphs: [
-      "In a world of fast-talking agencies and corporate buzzwords, Meridian was established to provide a sanctuary of calm, quiet competence.",
-      "We believe that every complex project is fundamentally a human endeavor. When a project slips, it isn't just a financial metric—it represents stress for leaders, burnout for teams, and anxiety for stakeholders.",
-      "Our team is composed exclusively of senior advisors who have run major business units, managed multi-million dollar budgets, and lived through the hard lessons of complex execution. We don't send junior analysts to do a senior expert's job."
-    ],
-    values: [
+  trackRecordConfig: {
+    seoTitle: "Track Record | Evaluations Across 12 Countries — DERAP Consult",
+    seoDescription: "Assignments led by DERAP’s lead consultant for the OECD, African Union, Heifer International, Self Help Africa, ICRAF, Farm Africa and others across Africa and Europe.",
+    corporateAssignments: [
       {
-        title: "Empathy Before Execution",
-        description: "We seek first to understand the human pressures before recommending structural changes."
-      },
-      {
-        title: "Relentless Truth-Telling",
-        description: "We tell you what you need to hear, kindly and clearly, even when it is uncomfortable."
-      },
-      {
-        title: "Radical Simplicity",
-        description: "If a solution cannot be explained in two sentences on a whiteboard, it is too complex to succeed."
-      },
-      {
-        title: "Quiet Stewardship",
-        description: "We measure our success by your team's independence, not by how long we stay on retainer."
+        title: "Data Audit Trail — East Africa Dairy Development (EADD) Project",
+        client: "Heifer International",
+        country: "Kenya / East Africa",
+        description: "Independent audit of project data systems and trails, assessing data integrity, flow, storage and use across the EADD monitoring system, with recommendations for data quality assurance."
       }
     ],
-    teamMembers: [
+    leadConsultantDisclosure: "The assignments below were led or co-led by John Ngotho Kinyua under prior or concurrent professional affiliations, principally Agile Consulting Africa. They are presented as evidence of the technical leadership DERAP brings to every engagement. Client references are available on request.",
+    leadAssignments: [
       {
-        name: "Elena Rostova",
-        role: "Managing Partner & Lead Evaluator",
-        bio: "Former VP of Operations with 18+ years leading complex systems transformations in health and infrastructure. Elena brings calm clarity to volatile project environments.",
-        image: "/images/team-meeting.jpg",
-        personalQuote: "The greatest risk in any project is the truth that nobody dares to say aloud."
+        assignment: "Annual project monitoring and evaluation, De-risking, Inclusion and Value Enhancement of Pastoral Economies in the Horn of Africa (DRIVE)",
+        client: "ZEP-RE / World Bank-financed",
+        country: "Somalia",
+        period: "2026-present"
       },
       {
-        name: "Marcus Vance",
-        role: "Partner, Risk & Governance",
-        bio: "Senior advisor specializing in technical architecture and vendor accountability. Over 15 years advising public and private sector boards on capital allocation.",
-        image: "/images/contact-hero.jpg",
-        personalQuote: "Good governance isn't red tape—it's the guardrail that lets you drive fast with confidence."
+        assignment: "Final evaluation, Strengthening of the Competitiveness of the Cassava Value Chain in Kenya Project",
+        client: "Self Help Africa",
+        country: "Kenya",
+        period: "2024"
       },
       {
-        name: "Dr. Samira Khan",
-        role: "Director of Organizational Alignment",
-        bio: "Organizational psychologist turned management consultant. Samira focuses on human dynamics, team morale, and friction reduction in multi-disciplinary teams.",
-        image: "/images/policy-meeting.jpg",
-        personalQuote: "When people feel safe to flag mistakes early, project speed doubles naturally."
+        assignment: "Impact evaluation of the NSDS programme, using Pooled Time-Series Cross-Sectional analysis",
+        client: "OECD / PARIS21",
+        country: "Global programme (based in Paris)",
+        period: "2016"
+      },
+      {
+        assignment: "Baseline and final evaluations, Ecological and Organic Agriculture Initiative",
+        client: "African Union",
+        country: "Senegal, Nigeria, Mali, Benin, Kenya, Tanzania, Uganda, Ethiopia, Rwanda",
+        period: "2019"
+      },
+      {
+        assignment: "Midterm and final evaluations, East Africa Dairy Development",
+        client: "Heifer International",
+        country: "Kenya, Uganda, Tanzania",
+        period: "2018"
+      },
+      {
+        assignment: "Gender analysis, Digital Agricultural Advisory Services (DAAS)",
+        client: "Tanager",
+        country: "Ethiopia",
+        period: "2022"
+      },
+      {
+        assignment: "Skills and knowledge gap analysis, eMobility project",
+        client: "WE!Hub / Siemens Stiftung",
+        country: "Kenya",
+        period: "2021"
+      },
+      {
+        assignment: "Agribusiness Investment for Market Stimulation (AIMS) research",
+        client: "EAGC / Global Communities",
+        country: "Kenya, Tanzania, Malawi",
+        period: "2017"
+      },
+      {
+        assignment: "Sorghum and green grams value chain evaluation; outcome mapping exercise",
+        client: "Farm Africa",
+        country: "Kenya",
+        period: "2014"
+      },
+      {
+        assignment: "Baseline study, Evergreen Agriculture Project",
+        client: "World Agroforestry Centre (ICRAF)",
+        country: "Kenya, Tanzania, Malawi",
+        period: "2011"
+      },
+      {
+        assignment: "M&E system design and quasi-experimental evaluation across six national programmes",
+        client: "Equity Group Foundation",
+        country: "Kenya",
+        period: "2011-2014"
+      }
+    ],
+    sectors: [
+      "Agriculture, agribusiness and food systems",
+      "Livestock, dairy and pastoral economies",
+      "Financial inclusion and enterprise development",
+      "Resilience and de-risking in fragile contexts",
+      "Clean energy and eMobility",
+      "Gender",
+      "National statistical systems and data governance"
+    ],
+    countries: [
+      "Kenya", "Uganda", "Tanzania", "Ethiopia", "Rwanda", "Somalia",
+      "Malawi", "Senegal", "Nigeria", "Mali", "Benin", "France"
+    ]
+  },
+
+  insightsConfig: {
+    seoTitle: "Insights & Methods Notes | DERAP Consult",
+    seoDescription: "Methods notes and commentary on evaluation design, sampling, and evidence use in development programming.",
+    intro: "Short notes on how we do the work — evaluation design, sampling, weighting, and the honest limits of what data can tell us. Written for programme managers and commissioners, not only for methodologists.",
+    articles: [
+      {
+        id: "psm-did-rdd",
+        title: "When you cannot randomise: choosing between PSM, DiD and Regression Discontinuity.",
+        summary: "A plain-language decision guide for programme managers commissioning impact evaluations. Comparing non-experimental counterfactual methods to select the right design for your intervention.",
+        category: "Evaluation Methods",
+        date: "August 2026",
+        readTime: "6 min read"
+      },
+      {
+        id: "data-quality-audit",
+        title: "What a data quality audit actually looks for.",
+        summary: "Practical insights drawn from data audit trails in East Africa. Inspecting data flow integrity, field back-checking protocols, and system reliability.",
+        category: "Data Integrity",
+        date: "August 2026",
+        readTime: "5 min read"
+      },
+      {
+        id: "phone-surveys-weighting",
+        title: "Why phone surveys in Kenya need weighting — and what happens when they don’t.",
+        summary: "Addressing multi-SIM bias and post-stratification against KNBS census benchmarks in telephone survey research.",
+        category: "Public Opinion",
+        date: "August 2026",
+        readTime: "7 min read"
       }
     ]
   },
 
-  unaskedQuestions: [
-    {
-      question: "Do I have to fire or replace my current team or vendors?",
-      answer: "Almost never. In 90% of our evaluations, the issue isn't team competence—it is unclear priorities, conflicting incentives, or broken decision rights. We help your existing team succeed."
-    },
-    {
-      question: "What if I hate your recommendations or think they're unrealistic?",
-      answer: "We co-design every recommendation with you in real time. There are no sudden 200-page reveal decks. If a proposal doesn't fit your practical reality, we adjust it immediately."
-    },
-    {
-      question: "Can I afford your advisory services if our Q4 budget is tight?",
-      answer: "Our engagements are scoped tightly around specific outcomes, not endless open-ended retainers. We frequently identify immediate cost savings in our first fortnight that offset our fee."
-    },
-    {
-      question: "Will your presence make my leadership team feel defensive or threatened?",
-      answer: "We enter every organization as supportive partners, not external inquisitors. Our warm, confidential 1-on-1 process builds trust quickly and creates a safe space for honest dialogue."
-    }
-  ],
-
-  brainAuditConfig: {
-    badge: "15-Minute Diagnosis",
-    title: "Send Us Your Biggest Headache. We'll Record a Video Blueprint.",
-    subtitle: "Zero sales fluff, zero high-pressure pitches. Just 15 minutes of raw, expert insight on how a partner would tackle your specific challenge. You keep the video forever.",
-    ctaButtonText: "Request My 15-Minute Video Audit",
-    privacyNote: "Privacy & Security Guaranteed: Your submission is encrypted and strictly protected under our strict non-disclosure promise."
-  },
-
-  pricingAnchorConfig: {
-    widgetLabel: "Transparent & Fair Advisory",
-    badge: "No-BS Commitment",
-    headline: "We don't do hidden fees. We don't do 12-month lock-ins.",
-    subtext: "We believe trust starts with complete clarity. Ask us anything about pricing, timeline, or scope before signing a single paper.",
-    liveCtaText: "Scared of high consultant fees? Just ask. We're nice, we promise.",
-    bullets: [
-      "Fixed-fee project health diagnostics (No billing surprises)",
-      "Cancel anytime agreements with 7-day notice",
-      "Direct access to senior partners—no junior hand-offs"
+  contactConfig: {
+    seoTitle: "Contact DERAP Consult | Nairobi, Kenya",
+    seoDescription: "Contact DERAP Consult Limited for evaluations, survey research, data analysis and training. Nairobi, Kenya.",
+    headline: "Let’s talk about your study.",
+    subtext: "Tell us what you need to find out, who needs to be convinced, and roughly when. We will respond within two working days with an honest view of whether DERAP is the right firm for the assignment.",
+    enquiryTypes: [
+      "Evaluation / MEAL system",
+      "Data analysis",
+      "Survey or polling",
+      "Training",
+      "Other"
     ]
-  },
-
-  calendarConfig: {
-    badge: "Direct Partner Availability",
-    title: "Pick a Time That Works for You",
-    subtitle: "Select a 30-minute confidential window to speak directly with one of our senior partners. No junior gatekeepers.",
-    availableDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    availableTimeSlots: ["09:00 AM", "11:30 AM", "02:00 PM", "04:30 PM"],
-    embedNote: "Prefer email first? Send us a quick note below and we'll reply within 4 hours."
   }
 };

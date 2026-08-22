@@ -58,10 +58,9 @@ export default function TestimonialSlider() {
         boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
         position: 'relative'
       }}>
-        {/* Quote Icon */}
+        
         <Quote size={56} color="#E6A817" style={{ opacity: 0.15, position: 'absolute', top: '28px', right: '32px' }} />
 
-        {/* Rating Stars */}
         <div style={{ display: 'flex', gap: '4px', marginBottom: '20px' }}>
           {[...Array(activeTestimonial.rating)].map((_, i) => (
             <Star key={i} size={18} fill="#E6A817" color="#E6A817" />
@@ -71,7 +70,6 @@ export default function TestimonialSlider() {
           </span>
         </div>
 
-        {/* Quote Body */}
         <p style={{
           fontFamily: 'var(--font-lora)',
           fontSize: '1.25rem',
@@ -83,7 +81,6 @@ export default function TestimonialSlider() {
           "{activeTestimonial.quote}"
         </p>
 
-        {/* Author Details */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <h4 style={{ margin: '0 0 2px', fontSize: '1.1rem', color: '#1E1E1E', fontFamily: 'var(--font-inter)', fontWeight: '700' }}>
@@ -95,7 +92,6 @@ export default function TestimonialSlider() {
             </div>
           </div>
 
-          {/* Navigation Controls */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <button
               onClick={handlePrev}
@@ -117,7 +113,6 @@ export default function TestimonialSlider() {
               <ChevronLeft size={20} />
             </button>
 
-            {/* Slide Dots */}
             <div style={{ display: 'flex', gap: '6px' }}>
               {testimonials.map((_, idx) => (
                 <button

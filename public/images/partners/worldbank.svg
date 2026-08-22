@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60">
+  <!-- World Bank Globe -->
+  <circle cx="30" cy="30" r="24" fill="#002244"/>
+  <circle cx="30" cy="30" r="18" stroke="#0071BC" stroke-width="2.5" fill="none"/>
+  <ellipse cx="30" cy="30" rx="9" ry="18" stroke="#38BDF8" stroke-width="2" fill="none"/>
+  <line x1="12" y1="30" x2="48" y2="30" stroke="#38BDF8" stroke-width="2"/>
+  <line x1="15" y1="21" x2="45" y2="21" stroke="#0071BC" stroke-width="1.5"/>
+  <line x1="15" y1="39" x2="45" y2="39" stroke="#0071BC" stroke-width="1.5"/>
+
+  <!-- World Bank Text -->
+  <text x="68" y="28" fill="#002244" font-family="'Georgia', serif" font-weight="700" font-size="20" letter-spacing="1px">THE WORLD BANK</text>
+  <text x="68" y="44" fill="#0071BC" font-family="'Inter', sans-serif" font-weight="700" font-size="12" letter-spacing="1.5px">IBRD • IDA | WORLD BANK GROUP</text>
+</svg>

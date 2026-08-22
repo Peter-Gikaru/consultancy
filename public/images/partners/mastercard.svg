@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60">
+  <!-- Mastercard Circles -->
+  <circle cx="22" cy="30" r="18" fill="#EB001B"/>
+  <circle cx="40" cy="30" r="18" fill="#F79E1B" fill-opacity="0.9"/>
+  <path d="M31 15.5A18 18 0 0 1 31 44.5A18 18 0 0 1 31 15.5Z" fill="#FF5F00"/>
+
+  <!-- Mastercard Foundation Text -->
+  <text x="70" y="32" fill="#0A0A0A" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="22" letter-spacing="-0.5px">mastercard</text>
+  <text x="70" y="48" fill="#475569" font-family="'Inter', Arial, sans-serif" font-weight="700" font-size="15" letter-spacing="0.5px">foundation</text>
+</svg>

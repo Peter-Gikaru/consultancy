@@ -77,7 +77,6 @@ export default function CalendarEmbed() {
         </div>
       ) : (
         <div>
-          {/* Day Selector */}
           <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '12px', marginBottom: '24px' }}>
             {config.availableDays.map((day) => {
               const isSelected = day === selectedDay;
@@ -104,7 +103,6 @@ export default function CalendarEmbed() {
             })}
           </div>
 
-          {/* Time Slot Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', marginBottom: '24px' }}>
             {config.availableTimeSlots.map((slot) => (
               <button

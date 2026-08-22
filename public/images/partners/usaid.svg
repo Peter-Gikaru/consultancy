@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60">
+  <!-- USAID Badge -->
+  <rect width="48" height="48" x="6" y="6" rx="8" fill="#002F6C"/>
+  <path d="M12 30L24 18L36 30L24 42Z" fill="#BA0C2F" opacity="0.4"/>
+  <path d="M18 28L24 22L30 28L24 34Z" fill="#FFFFFF"/>
+  <path d="M24 34L30 28L36 34L30 40Z" fill="#BA0C2F"/>
+  <circle cx="36" cy="22" r="3" fill="#FFFFFF"/>
+
+  <!-- USAID Text -->
+  <text x="66" y="38" fill="#002F6C" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="28" letter-spacing="1px">USAID</text>
+  <text x="66" y="48" fill="#BA0C2F" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="9" letter-spacing="0.8px">FROM THE AMERICAN PEOPLE</text>
+</svg>

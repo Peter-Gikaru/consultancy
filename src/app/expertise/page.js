@@ -1,4 +1,5 @@
-import ServicesPage, { metadata } from '../services/page';
+import { redirect } from 'next/navigation';
 
-export { metadata };
-export default ServicesPage;
+export default function ExpertisePage() {
+  redirect('/services');
+}

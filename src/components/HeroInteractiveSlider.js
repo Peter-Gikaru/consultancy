@@ -66,25 +66,22 @@ export default function HeroInteractiveSlider() {
           gap: '48px',
           alignItems: 'center'
         }} className="hero-grid-responsive">
-          {/* Left Hero Content */}
+          
           <div>
-            {/* Glowing Animated Badge */}
+            
             <div className="glow-badge animate-stagger-1" style={{ marginBottom: '24px', display: 'inline-flex' }}>
               <span className="pulse-dot" />
               <ShieldCheck size={18} /> {slide.badge}
             </div>
 
-            {/* Hero Headline */}
             <h1 className="hero-headline animate-stagger-2" style={{ marginBottom: '24px' }}>
               {slide.headline}
             </h1>
 
-            {/* Subheadline */}
             <p className="lead animate-stagger-3" style={{ color: '#F8F9FA', opacity: 0.95, fontSize: '1.25rem', marginBottom: '36px', maxWidth: '720px', lineHeight: 1.7 }}>
               {slide.subheadline}
             </p>
 
-            {/* CTA Group */}
             <div style={{ display: 'flex', gap: '18px', flexWrap: 'wrap', marginBottom: '48px' }}>
               <Link href={slide.ctaPrimaryHref} className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
                 {slide.ctaPrimary} <ArrowRight size={18} />
@@ -94,7 +91,6 @@ export default function HeroInteractiveSlider() {
               </Link>
             </div>
 
-            {/* Dynamic Animated Stats Bar */}
             <div className="glass-panel-dark" style={{
               padding: '24px 32px',
               borderRadius: '14px',
@@ -137,7 +133,6 @@ export default function HeroInteractiveSlider() {
                 </div>
               </div>
 
-              {/* Slide Indicators */}
               <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto' }}>
                 {slides.map((_, idx) => (
                   <button
@@ -159,7 +154,6 @@ export default function HeroInteractiveSlider() {
             </div>
           </div>
 
-          {/* Right Floating Card Stack Mockup (Inspired by Video 1 Showcase) */}
           <div className="hero-floating-deck desktop-only" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div className="hero-floating-card" style={{ padding: '24px', color: '#1E1E1E' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
@@ -219,4 +213,3 @@ export default function HeroInteractiveSlider() {
     </section>
   );
 }
-

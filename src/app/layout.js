@@ -1,9 +1,9 @@
-import { Inter, Lora, Playfair_Display } from 'next/font/google';
+import { Inter, Lora } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import NoBsPricingAnchor from '@/components/NoBsPricingAnchor';
-import { siteData } from '@/config/siteData';
+import CursorGlow from '@/components/CursorGlow';
+import FloatingContactWidget from '@/components/FloatingContactWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,25 +19,19 @@ const lora = Lora({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair-next',
-  weight: ['500', '600', '700', '800'],
-  display: 'swap',
-});
-
 export const metadata = {
-  title: `${siteData.siteInfo.brandName} - Project Evaluation & Advisory`,
-  description: siteData.siteInfo.tagline,
+  title: "DERAP Consult Limited | Evaluation, Research & Data Analytics — Nairobi, Kenya",
+  description: "A Kenyan research and evaluation firm specialising in rigorous impact evaluation, advanced quantitative analysis and transparent public opinion research across Africa.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
       <body>
+        <CursorGlow />
         <Navbar />
         <main>{children}</main>
-        <NoBsPricingAnchor />
+        <FloatingContactWidget />
         <Footer />
       </body>
     </html>

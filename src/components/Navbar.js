@@ -116,7 +116,7 @@ export default function Navbar() {
             <div>
               <span style={{
                 fontFamily: 'var(--font-lora)',
-                fontSize: '1.25rem',
+                fontSize: 'clamp(1rem, 4.5vw, 1.25rem)',
                 fontWeight: '700',
                 color: 'var(--slate-900)',
                 letterSpacing: '-0.01em',
@@ -125,7 +125,7 @@ export default function Navbar() {
               }}>
                 DERAP <span style={{ color: 'var(--accent-amber-hover)' }}>Consult</span>
               </span>
-              <span style={{ fontSize: '0.7rem', color: 'var(--slate-500)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <span style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--slate-500)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
                 Research &amp; Evaluation
               </span>
             </div>

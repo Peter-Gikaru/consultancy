@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 export default function PartnerTrustGrid() {
   const partners = [
@@ -117,7 +118,7 @@ export default function PartnerTrustGrid() {
                     justifyContent: 'center'
                   }}>
                     <img
-                      src={partner.logoSrc}
+                      src={getImageUrl(partner.logoSrc)}
                       alt={partner.alt}
                       style={{
                         maxHeight: '40px',

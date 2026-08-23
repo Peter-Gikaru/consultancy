@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight, BookOpen, ShieldCheck, Mail, Phone, Globe, BarChart3, Award } from 'lucide-react';
 import { siteData } from '@/config/siteData';
 import { siteSettingsStore } from '@/utils/siteSettingsStore';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -108,7 +109,7 @@ export default function Navbar() {
               backgroundColor: '#FFFFFF'
             }}>
               <img
-                src="/images/logo.jpg"
+                src={getImageUrl('/images/logo.jpg')}
                 alt="DERAP Consult Limited Logo"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

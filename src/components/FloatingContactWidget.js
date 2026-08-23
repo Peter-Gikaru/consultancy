@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { MessageSquare, X, Mail, Phone, ArrowRight, Sparkles } from 'lucide-react';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 export default function FloatingContactWidget() {
   const [open, setOpen] = useState(false);
@@ -72,7 +73,7 @@ export default function FloatingContactWidget() {
           justifyContent: 'center'
         }}>
           <img
-            src="/images/logo.jpg"
+            src={getImageUrl('/images/logo.jpg')}
             alt="Senior Advisory Desk"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -113,7 +114,7 @@ export default function FloatingContactWidget() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '1.5px solid var(--accent-amber)', backgroundColor: '#FFFFFF' }}>
-                <img src="/images/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={getImageUrl('/images/logo.jpg')} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', color: 'var(--accent-amber)', fontWeight: '700', textTransform: 'uppercase' }}>

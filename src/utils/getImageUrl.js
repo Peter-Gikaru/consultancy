@@ -8,9 +8,7 @@ export function getImageUrl(url) {
   ) {
     return url;
   }
-  const basePath =
-    process.env.NEXT_PUBLIC_BASE_PATH ||
-    (process.env.NODE_ENV === 'production' ? '/consultancy' : '');
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const cleanUrl = url.startsWith('/') ? url : `/${url}`;
   if (basePath && cleanUrl.startsWith(basePath)) {
     return cleanUrl;

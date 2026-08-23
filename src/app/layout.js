@@ -1,4 +1,4 @@
-import { Inter, Lora } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,10 +12,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-lora-next',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair-next',
+  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
 
@@ -26,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
         <CursorGlow />
         <Navbar />

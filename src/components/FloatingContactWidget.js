@@ -44,49 +44,36 @@ export default function FloatingContactWidget() {
 
       <button
         onClick={() => setOpen(!open)}
-        aria-label="Quick contact widget"
+        aria-label="Speak with a Partner"
+        title="Speak with a Partner"
         style={{
-          width: '56px',
-          height: '56px',
+          width: '58px',
+          height: '58px',
           borderRadius: '50%',
-          backgroundColor: '#0F172A',
-          border: '2px solid var(--accent-amber)',
-          boxShadow: '0 10px 28px rgba(15, 23, 42, 0.35)',
+          backgroundColor: '#0A2540',
+          border: '2px solid #F5A623',
+          boxShadow: '0 10px 28px rgba(10, 37, 64, 0.4)',
           cursor: 'pointer',
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '3px',
-          overflow: 'visible',
+          color: '#FFFFFF',
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
-        <div style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '50%',
-          overflow: 'hidden',
-          backgroundColor: '#FFFFFF',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <img
-            src={getImageUrl('/images/logo.jpg')}
-            alt="Senior Advisory Desk"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
+        <Phone size={24} color="#F5A623" />
         <span
-          className="pulse-dot-warm"
           style={{
             position: 'absolute',
-            top: '0px',
-            right: '0px',
-            border: '2px solid #0F172A',
-            width: '12px',
-            height: '12px'
+            top: '2px',
+            right: '2px',
+            width: '13px',
+            height: '13px',
+            borderRadius: '50%',
+            backgroundColor: '#10B981',
+            border: '2px solid #0A2540',
+            boxShadow: '0 0 0 2px rgba(16, 185, 129, 0.4)'
           }}
         />
       </button>

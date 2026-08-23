@@ -56,12 +56,12 @@ export default function Navbar() {
     <>
       
       <div style={{
-        backgroundColor: '#0F172A',
-        color: '#94A3B8',
+        backgroundColor: '#0A2540',
+        color: '#E2E8F0',
         padding: '0 16px',
         fontSize: '0.825rem',
         fontWeight: '600',
-        borderBottom: '1px solid #1E293B',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -83,10 +83,12 @@ export default function Navbar() {
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(16px)',
+        backgroundColor: 'rgba(248, 249, 250, 0.85)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         borderBottom: '1px solid var(--slate-200)',
-        transition: 'all 0.3s ease'
+        transition: 'all 0.3s ease',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)'
       }}>
         <div className="container" style={{
           display: 'flex',
@@ -102,7 +104,7 @@ export default function Navbar() {
               borderRadius: '12px',
               overflow: 'hidden',
               border: '1.5px solid var(--slate-200)',
-              boxShadow: '0 4px 12px rgba(15, 23, 42, 0.08)',
+              boxShadow: '0 4px 12px rgba(10, 37, 64, 0.08)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -116,39 +118,33 @@ export default function Navbar() {
             </div>
             <div>
               <span style={{
-                fontFamily: 'var(--font-lora)',
+                fontFamily: 'var(--font-playfair)',
                 fontSize: 'clamp(1rem, 4.5vw, 1.25rem)',
                 fontWeight: '700',
-                color: 'var(--slate-900)',
+                color: 'var(--primary)',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.1,
                 display: 'block'
               }}>
-                DERAP <span style={{ color: 'var(--accent-amber-hover)' }}>Consult</span>
+                DERAP <span style={{ color: 'var(--accent-gold)' }}>Consult</span>
               </span>
-              <span style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--slate-500)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
+              <span style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--slate-600)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
                 Research &amp; Evaluation
               </span>
             </div>
           </Link>
 
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="desktop-only">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }} className="desktop-only">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link ${isActive ? 'active' : ''}`}
+                  className={`nav-link-item ${isActive ? 'active' : ''}`}
                   style={{
-                    fontSize: '0.9rem',
                     fontWeight: isActive ? '700' : '600',
-                    color: isActive ? 'var(--accent-amber-hover)' : 'var(--slate-700)',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    backgroundColor: isActive ? 'rgba(217, 119, 6, 0.08)' : 'transparent',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease'
+                    color: isActive ? 'var(--primary)' : 'var(--slate-700)'
                   }}
                 >
                   {link.name}
@@ -158,7 +154,7 @@ export default function Navbar() {
           </nav>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link href="/contact" className="glow-cta-btn desktop-only" style={{ fontSize: '0.875rem', padding: '9px 18px' }}>
+            <Link href="/contact" className="btn btn-gold-primary desktop-only" style={{ fontSize: '0.875rem', padding: '9px 20px', borderRadius: '8px' }}>
               Request Proposal <ArrowRight size={16} />
             </Link>
 

@@ -23,15 +23,26 @@ export default function AboutPage() {
     <div>
       
       <section style={{
-        padding: '24px 24px 48px',
-        backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid var(--border-light)'
+        padding: '1.5rem 1.5rem 3.5rem',
+        backgroundColor: 'var(--bg-canvas)',
+        borderBottom: '1px solid var(--slate-200)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        <div className="ambient-mesh-glow" style={{
+          top: '-10%',
+          right: '5%',
+          width: '450px',
+          height: '450px',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, rgba(10, 37, 64, 0.06) 50%, rgba(255,255,255,0) 80%)'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <ScrollReveal direction="up" delay={0}>
             <div style={{ maxWidth: '840px' }}>
-              <h1 style={{ fontSize: '2.8rem', marginTop: '8px', marginBottom: '16px' }}>
-                Senior Evaluation Leadership <span style={{ color: 'var(--accent-amber-hover)' }}>On Every Mandate.</span>
+              <hr className="hero-anchor-line" />
+              <h1 style={{ fontFamily: 'var(--font-playfair)', fontSize: '3rem', marginTop: '8px', marginBottom: '16px', color: 'var(--primary)' }}>
+                Senior Evaluation Leadership <span style={{ color: 'var(--accent-gold)' }}>On Every Mandate.</span>
               </h1>
               <p className="lead" style={{ color: 'var(--slate-700)', fontSize: '1.15rem', lineHeight: '1.65' }}>
                 Led by John Ngotho Kinyua, MA (ex-OECD Paris &amp; Equity Group Foundation M&amp;E Head), backed by 250+ trained, bilingual field enumerators delivering empirical proof across East, Central, and West Africa.
@@ -111,7 +122,7 @@ export default function AboutPage() {
                   href={settings.cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary"
+                  className="btn btn-gold-primary"
                   style={{ gap: '10px' }}
                 >
                   <Download size={18} /> Download Full CV (PDF)
@@ -126,7 +137,7 @@ export default function AboutPage() {
         <div className="container">
           <ScrollReveal direction="up" delay={0}>
             <div style={{ marginBottom: '40px' }}>
-              <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-amber-hover)' }}>
+              <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-gold-hover)' }}>
                 Principles
               </span>
               <h2 style={{ fontSize: '2.2rem', marginTop: '6px' }}>
@@ -138,9 +149,9 @@ export default function AboutPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {aboutConfig.values.map((val, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 100}>
-                <div className="card" style={{ padding: '24px 32px' }}>
+                <div className="card" style={{ padding: '24px 32px', boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.05)' }}>
                   <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                    <ShieldCheck size={26} color="var(--accent-amber)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <ShieldCheck size={26} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <div>
                       <h3 style={{ fontSize: '1.3rem', marginBottom: '6px' }}>
                         {val.title}
@@ -157,16 +168,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section section-dark" style={{ textAlign: 'center', padding: '80px 24px' }}>
+      <section className="section section-dark" style={{ textAlign: 'center', padding: '80px 24px', backgroundColor: '#0A2540' }}>
         <div className="container" style={{ maxWidth: '680px' }}>
           <ScrollReveal direction="zoom" delay={0}>
-            <h2 style={{ color: '#FFFFFF', fontSize: '2.2rem', marginBottom: '16px' }}>
+            <h2 style={{ color: '#FFFFFF', fontSize: '2.2rem', marginBottom: '16px', fontFamily: 'var(--font-playfair)' }}>
               Ready to discuss your evaluation assignment?
             </h2>
             <p style={{ color: '#94A3B8', fontSize: '1.1rem', marginBottom: '28px' }}>
               Contact our lead consultant directly to explore designs, methods, and timelines.
             </p>
-            <Link href="/contact" className="btn btn-primary" style={{ padding: '14px 32px' }}>
+            <Link href="/contact" className="btn btn-gold-primary" style={{ padding: '14px 32px' }}>
               Get in touch →
             </Link>
           </ScrollReveal>

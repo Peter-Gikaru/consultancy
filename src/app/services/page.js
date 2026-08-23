@@ -22,15 +22,26 @@ export default function ServicesPage() {
     <div>
       
       <section style={{
-        padding: '24px 24px 48px',
-        backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid var(--border-light)'
+        padding: '1.5rem 1.5rem 3.5rem',
+        backgroundColor: 'var(--bg-canvas)',
+        borderBottom: '1px solid var(--slate-200)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        <div className="ambient-mesh-glow" style={{
+          top: '-10%',
+          right: '5%',
+          width: '450px',
+          height: '450px',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, rgba(10, 37, 64, 0.06) 50%, rgba(255,255,255,0) 80%)'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <ScrollReveal direction="up" delay={0}>
             <div style={{ maxWidth: '840px' }}>
-              <h1 style={{ fontSize: '2.8rem', marginTop: '8px', marginBottom: '16px' }}>
-                Four Research Disciplines. <span style={{ color: 'var(--accent-amber-hover)' }}>Zero-Tolerance Audit Rigour.</span>
+              <hr className="hero-anchor-line" />
+              <h1 style={{ fontFamily: 'var(--font-playfair)', fontSize: '3rem', marginTop: '8px', marginBottom: '16px', color: 'var(--primary)' }}>
+                Four Research Disciplines. <span style={{ color: 'var(--accent-gold)' }}>Zero-Tolerance Audit Rigour.</span>
               </h1>
               <p className="lead" style={{ color: 'var(--slate-700)', fontSize: '1.15rem', lineHeight: '1.65' }}>
                 From quasi-experimental RCT counterfactuals to high-frequency mobile polling — four specialized research disciplines built for donor steering committees and evidence-based governance.
@@ -48,13 +59,13 @@ export default function ServicesPage() {
                 <div
                   id={service.id}
                   className="card"
-                  style={{ padding: '40px' }}
+                  style={{ padding: '40px', boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.05)' }}
                 >
                   <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
                     <div style={{ padding: '12px', borderRadius: '12px', backgroundColor: 'var(--bg-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {icons[index]}
                     </div>
-                    <h2 style={{ fontSize: '1.8rem', margin: 0 }}>
+                    <h2 style={{ fontSize: '1.8rem', margin: 0, fontFamily: 'var(--font-playfair)' }}>
                       {service.title}
                     </h2>
                   </div>
@@ -67,7 +78,7 @@ export default function ServicesPage() {
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       {service.items.map((item, idx) => (
                         <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '1rem', color: 'var(--text-muted)' }}>
-                          <Check size={18} color="var(--accent-amber)" style={{ flexShrink: 0, marginTop: '4px' }} />
+                          <Check size={18} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '4px' }} />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -100,7 +111,7 @@ export default function ServicesPage() {
                       alignItems: 'flex-start',
                       gap: '12px'
                     }}>
-                      <ShieldCheck size={20} color="var(--accent-amber)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <ShieldCheck size={20} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
                       <div>
                         <strong style={{ color: 'var(--text-main)' }}>Compliance &amp; Methodological Disclosure:</strong> {service.complianceNote}
                       </div>
@@ -113,16 +124,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section-dark" style={{ textAlign: 'center', padding: '88px 24px' }}>
+      <section className="section section-dark" style={{ textAlign: 'center', padding: '88px 24px', backgroundColor: '#0A2540' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
           <ScrollReveal direction="zoom" delay={0}>
-            <h2 style={{ fontSize: '2.4rem', color: '#FFFFFF', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '2.4rem', color: '#FFFFFF', marginBottom: '16px', fontFamily: 'var(--font-playfair)' }}>
               Not sure which of these you need?
             </h2>
             <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '32px' }}>
               {servicesConfig.closingCta}
             </p>
-            <Link href="/contact" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
+            <Link href="/contact" className="btn btn-gold-primary" style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
               Contact Us <ArrowRight size={18} />
             </Link>
           </ScrollReveal>

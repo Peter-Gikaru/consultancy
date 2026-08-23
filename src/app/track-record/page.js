@@ -16,15 +16,26 @@ export default function TrackRecordPage() {
     <div>
       
       <section style={{
-        padding: '24px 24px 48px',
-        backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid var(--border-light)'
+        padding: '1.5rem 1.5rem 3.5rem',
+        backgroundColor: 'var(--bg-canvas)',
+        borderBottom: '1px solid var(--slate-200)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        <div className="ambient-mesh-glow" style={{
+          top: '-10%',
+          right: '5%',
+          width: '450px',
+          height: '450px',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, rgba(10, 37, 64, 0.06) 50%, rgba(255,255,255,0) 80%)'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <ScrollReveal direction="up" delay={0}>
             <div style={{ maxWidth: '840px' }}>
-              <h1 style={{ fontSize: '2.8rem', marginTop: '8px', marginBottom: '16px' }}>
-                12 Sub-Saharan Nations. <span style={{ color: 'var(--accent-amber-hover)' }}>250+ Verified Field Surveys.</span>
+              <hr className="hero-anchor-line" />
+              <h1 style={{ fontFamily: 'var(--font-playfair)', fontSize: '3rem', marginTop: '8px', marginBottom: '16px', color: 'var(--primary)' }}>
+                12 Sub-Saharan Nations. <span style={{ color: 'var(--accent-gold)' }}>250+ Verified Field Surveys.</span>
               </h1>
               <p className="lead" style={{ color: 'var(--slate-700)', fontSize: '1.15rem', lineHeight: '1.65' }}>
                 A 12-year track record leading complex evaluation mandates for the OECD, African Union, World Bank-financed programs, and international development agencies across Africa and Europe.

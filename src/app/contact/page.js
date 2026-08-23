@@ -106,15 +106,26 @@ export default function ContactPage() {
     <div>
       
       <section style={{
-        padding: '24px 24px 40px',
-        backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid var(--border-light)'
+        padding: '1.5rem 1.5rem 3.5rem',
+        backgroundColor: 'var(--bg-canvas)',
+        borderBottom: '1px solid var(--slate-200)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        <div className="ambient-mesh-glow" style={{
+          top: '-10%',
+          right: '5%',
+          width: '450px',
+          height: '450px',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, rgba(10, 37, 64, 0.06) 50%, rgba(255,255,255,0) 80%)'
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <ScrollReveal direction="up" delay={0}>
             <div style={{ maxWidth: '840px' }}>
-              <h1 style={{ fontSize: '2.8rem', marginTop: '8px', marginBottom: '16px' }}>
-                Commission an Evaluation. <span style={{ color: 'var(--accent-amber-hover)' }}>Talk Directly to Lead Researchers.</span>
+              <hr className="hero-anchor-line" />
+              <h1 style={{ fontFamily: 'var(--font-playfair)', fontSize: '3rem', marginTop: '8px', marginBottom: '16px', color: 'var(--primary)' }}>
+                Commission an Evaluation. <span style={{ color: 'var(--accent-gold)' }}>Talk Directly to Lead Researchers.</span>
               </h1>
               <p className="lead" style={{ maxWidth: '780px', color: 'var(--slate-700)', fontSize: '1.15rem', lineHeight: '1.65' }}>
                 Tell us what evidence decision you need to make and your timeline. We respond within two working days with a clear design proposal and sampling memorandum.

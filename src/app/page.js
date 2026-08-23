@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, BarChart3, Users, BookOpen, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, ShieldCheck, Award, BarChart3, Users } from 'lucide-react';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import TypewriterHeadline from '@/components/TypewriterHeadline';
+import AbstractDataVisual from '@/components/AbstractDataVisual';
 import PartnerTrustGrid from '@/components/PartnerTrustGrid';
 import AlternatingFeatureBlocks from '@/components/AlternatingFeatureBlocks';
 import WhyDerapGrid from '@/components/WhyDerapGrid';
@@ -26,76 +29,139 @@ export default function HomePage() {
     { label: "Data Quality Audit", value: "100", suffix: "%", sub: "Methodological Transparency" }
   ];
 
+  const trustLogos = [
+    { name: "USAID", src: "/images/partners/usaid.svg" },
+    { name: "World Bank", src: "/images/partners/worldbank.svg" },
+    { name: "UNICEF", src: "/images/partners/unicef.svg" },
+    { name: "AfDB", src: "/images/partners/afdb.svg" }
+  ];
+
   return (
     <div>
       
+      {/* Redesigned Hero Section */}
       <section style={{
-        padding: '1.75rem 1.5rem 4.5rem',
-        backgroundColor: '#FFFFFF',
+        padding: '1.5rem 1.5rem 4rem',
+        backgroundColor: 'var(--bg-canvas)',
         borderBottom: '1px solid var(--slate-200)',
         position: 'relative',
         overflow: 'hidden'
       }}>
         
         <div className="ambient-mesh-glow" style={{
-          top: '-15%',
-          right: '-5%',
-          width: '550px',
-          height: '550px',
-          background: 'radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, rgba(30, 58, 138, 0.08) 50%, rgba(255,255,255,0) 80%)'
+          top: '-10%',
+          right: '5%',
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, rgba(10, 37, 64, 0.06) 50%, rgba(255,255,255,0) 80%)'
         }} />
 
-        <div className="container">
-          <div style={{ maxWidth: '860px', position: 'relative', zIndex: 2 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          {/* Left (60%) / Right (40%) SaaS / Consultancy Layout */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '3.5rem',
+            alignItems: 'center'
+          }}>
             
-            <ScrollReveal direction="up" delay={0}>
-              <h1 className="hero-headline" style={{ marginBottom: '1.25rem', lineHeight: '1.2' }}>
-                Building <span className="hero-inline-badge">Methodological Rigour</span> in Impact Evaluation &amp; Policy Analytics.
-              </h1>
-            </ScrollReveal>
+            {/* Left Column: Left-Aligned Content */}
+            <div style={{ maxWidth: '680px' }}>
+              
+              <ScrollReveal direction="up" delay={0}>
+                {/* Subtle Thin Anchor Line */}
+                <hr className="hero-anchor-line" />
 
-            <ScrollReveal direction="up" delay={150}>
-              <p className="lead" style={{ marginBottom: '2.25rem', maxWidth: '820px', color: 'var(--slate-700)', fontSize: '1.2rem', lineHeight: '1.65' }}>
-                Empirical proof for high-stakes policy. We deliver quasi-experimental impact evaluations, econometric models, and real-time field data audits across Sub-Saharan Africa — engineered to survive international donor audit.
-              </p>
-            </ScrollReveal>
+                {/* Micro-Animation Typewriter Headline */}
+                <TypewriterHeadline />
+              </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={250}>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
-                <Link href={heroConfig.ctaPrimaryLink} className="glow-cta-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                  {heroConfig.ctaPrimaryText} <ArrowRight size={18} />
-                </Link>
-                <Link href={heroConfig.ctaSecondaryLink} className="btn btn-outline btn-lg">
-                  {heroConfig.ctaSecondaryText}
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={350}>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
-                gap: '1.5rem',
-                paddingTop: '2rem',
-                borderTop: '1px solid var(--slate-200)'
-              }}>
-                {metrics.map((m, idx) => (
-                  <div key={idx}>
-                    <div style={{ fontSize: '1.45rem', fontWeight: '800', color: 'var(--accent-amber-hover)', fontFamily: 'var(--font-inter)' }}>
-                      <AnimatedCounter end={m.value} suffix={m.suffix} duration={1800} />
-                    </div>
-                    <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--slate-900)' }}>
-                      {m.label}
-                    </div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--slate-600)' }}>
-                      {m.sub}
-                    </div>
+              <ScrollReveal direction="up" delay={150}>
+                {/* 3 Bullet Points replacing dense block */}
+                <div className="hero-bullet-list">
+                  <div className="hero-bullet-item">
+                    <span className="hero-bullet-icon">✓</span>
+                    <span>Quasi-experimental impact evaluations</span>
                   </div>
-                ))}
-              </div>
+                  <div className="hero-bullet-item">
+                    <span className="hero-bullet-icon">✓</span>
+                    <span>Econometric models &amp; real-time field data audits</span>
+                  </div>
+                  <div className="hero-bullet-item">
+                    <span className="hero-bullet-icon">✓</span>
+                    <span>Engineered to survive international donor audit</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={250}>
+                {/* CTA Buttons */}
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                  {/* Solid Yellow Primary Button */}
+                  <Link href={heroConfig.ctaPrimaryLink} className="btn btn-gold-primary" style={{ padding: '12px 26px', fontSize: '0.95rem', borderRadius: '8px' }}>
+                    Request a Proposal <ArrowRight size={18} />
+                  </Link>
+                  
+                  {/* Ghost Navy Border Button */}
+                  <Link href={heroConfig.ctaSecondaryLink} className="btn btn-navy-ghost" style={{ padding: '12px 24px', fontSize: '0.95rem', borderRadius: '8px' }}>
+                    See our track record
+                  </Link>
+
+                  {/* Online Partner Availability Dot */}
+                  <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: '700', color: 'var(--primary)', textDecoration: 'none' }}>
+                    <span style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      backgroundColor: '#10B981',
+                      display: 'inline-block',
+                      boxShadow: '0 0 0 3px rgba(16, 185, 129, 0.25)'
+                    }} />
+                    <span>Speak with a partner</span>
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+            </div>
+
+            {/* Right Column: Abstract Data Visualization SVG */}
+            <ScrollReveal direction="up" delay={200}>
+              <AbstractDataVisual />
             </ScrollReveal>
 
           </div>
+
+          {/* Stats Counters in Floating White Cards */}
+          <ScrollReveal direction="up" delay={350}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gap: '1.5rem',
+              marginTop: '4rem'
+            }}>
+              {metrics.map((m, idx) => (
+                <div key={idx} style={{
+                  backgroundColor: '#FFFFFF',
+                  padding: '1.5rem 1.25rem',
+                  borderRadius: '16px',
+                  border: '1px solid var(--slate-200)',
+                  boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.05)',
+                  transition: 'transform 0.3s ease'
+                }}>
+                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--accent-gold)', fontFamily: 'var(--font-inter)' }}>
+                    <AnimatedCounter end={m.value} suffix={m.suffix} duration={1800} />
+                  </div>
+                  <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--primary)', marginTop: '4px' }}>
+                    {m.label}
+                  </div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--slate-600)', marginTop: '2px' }}>
+                    {m.sub}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
         </div>
       </section>
 

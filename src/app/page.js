@@ -30,10 +30,11 @@ export default function HomePage() {
   ];
 
   const trustLogos = [
-    { name: "USAID", src: "/images/partners/usaid.svg" },
+    { name: "OECD", src: "/images/partners/oecd.svg" },
+    { name: "African Union", src: "/images/partners/au.png" },
     { name: "World Bank", src: "/images/partners/worldbank.svg" },
-    { name: "UNICEF", src: "/images/partners/unicef.svg" },
-    { name: "AfDB", src: "/images/partners/afdb.svg" }
+    { name: "Equity Group", src: "/images/partners/equity-group.png" },
+    { name: "USAID", src: "/images/partners/usaid.png" }
   ];
 
   return (
@@ -176,6 +177,96 @@ export default function HomePage() {
       <ScrollReveal direction="up" delay={100}>
         <WhyDerapGrid />
       </ScrollReveal>
+
+      {/* Home Page Authentic Field & Policy Showcase */}
+      <section style={{ padding: '5rem 1.5rem', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--slate-200)' }}>
+        <div className="container" style={{ maxWidth: '1140px' }}>
+          <ScrollReveal direction="up" delay={0}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '3rem' }}>
+              <div>
+                <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-amber-hover)' }}>
+                  Empirical Evidence in Action
+                </span>
+                <h2 style={{ fontSize: '2.25rem', color: 'var(--text-main)', margin: '6px 0 0', fontFamily: 'var(--font-lora)' }}>
+                  Sector Engagements Across Africa
+                </h2>
+              </div>
+              <Link href="/track-record" className="btn btn-navy-ghost" style={{ padding: '10px 22px', fontSize: '0.9rem', borderRadius: '8px' }}>
+                View Full Track Record <ArrowRight size={16} />
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '28px'
+          }}>
+            {/* Card 1: Horn of Africa Climate & Pastoralism */}
+            <ScrollReveal direction="up" delay={100}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '14px', border: '1px solid var(--slate-200)' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/climate-project.jpg')}
+                    alt="Pastoralist communities and livestock resilience in the Horn of Africa"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontSize: '1.2rem', color: 'var(--primary)', marginBottom: '8px', fontFamily: 'var(--font-lora)' }}>
+                    Pastoralist Risk Transfer &amp; Climate Resilience
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Monitoring livestock drought risk financing, water infrastructure points, and de-risking mechanisms across Northern Kenya and cross-border pastoralist corridors.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Card 2: Turkana Health & Nutrition MEAL */}
+            <ScrollReveal direction="up" delay={200}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '14px', border: '1px solid var(--slate-200)' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/kenya-health-case.jpg')}
+                    alt="Maternal and community nutrition evaluation in Lodwar, Turkana County, Kenya"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontSize: '1.2rem', color: 'var(--primary)', marginBottom: '8px', fontFamily: 'var(--font-lora)' }}>
+                    Maternal Health &amp; Community Nutrition MEAL
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Quasi-experimental evaluations of nutritional support groups, cash assistance transfers, and facility-level health delivery across arid and semi-arid counties.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Card 3: High-Level Policy & Multilateral Advisory */}
+            <ScrollReveal direction="up" delay={300}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '14px', border: '1px solid var(--slate-200)' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/policy-meeting.jpg')}
+                    alt="African Union high-level diplomatic policy advisory boardroom summit"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontSize: '1.2rem', color: 'var(--primary)', marginBottom: '8px', fontFamily: 'var(--font-lora)' }}>
+                    Pan-African Evidence-Based Policy Advisory
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Translating empirical survey findings, counterfactual econometric models, and institutional evaluations into high-level policy papers and ministerial roadmaps.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       <ScrollReveal direction="up" delay={100}>
         <TestimonialCarousel />

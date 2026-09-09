@@ -6,16 +6,34 @@ import { getImageUrl } from '@/utils/getImageUrl';
 export default function PartnerTrustGrid() {
   const partners = [
     {
-      name: "UNICEF Africa",
-      role: "Child Rights & Education",
-      logoSrc: "/images/partners/unicef.png",
-      alt: "UNICEF Logo"
+      name: "OECD",
+      role: "PARIS21 Impact Evaluation",
+      logoSrc: "/images/partners/oecd.svg",
+      alt: "OECD Logo"
+    },
+    {
+      name: "African Union",
+      role: "EOA Initiative (9 Countries)",
+      logoSrc: "/images/partners/au.png",
+      alt: "African Union Logo"
     },
     {
       name: "The World Bank",
-      role: "Agricultural Policy & Surveys",
+      role: "DRIVE Pastoral Economies",
       logoSrc: "/images/partners/worldbank.svg",
       alt: "The World Bank Logo"
+    },
+    {
+      name: "Equity Group Foundation",
+      role: "M&E System & Quasi-Experimental",
+      logoSrc: "/images/partners/equity-group.png",
+      alt: "Equity Group Foundation Logo"
+    },
+    {
+      name: "CIFOR-ICRAF",
+      role: "World Agroforestry Centre",
+      logoSrc: "/images/partners/cifor-icraf.png",
+      alt: "CIFOR-ICRAF Logo"
     },
     {
       name: "USAID Kenya",
@@ -24,22 +42,16 @@ export default function PartnerTrustGrid() {
       alt: "USAID Logo"
     },
     {
-      name: "African Union",
-      role: "Governance & Economic Policy",
-      logoSrc: "/images/partners/au.png",
-      alt: "African Union Logo"
+      name: "UNICEF Africa",
+      role: "Child Rights & Education",
+      logoSrc: "/images/partners/unicef.png",
+      alt: "UNICEF Logo"
     },
     {
       name: "AfDB Group",
       role: "Infrastructure & Climate",
       logoSrc: "/images/partners/afdb.png",
       alt: "African Development Bank Logo"
-    },
-    {
-      name: "Mastercard Foundation",
-      role: "Youth Employment & Skills",
-      logoSrc: "/images/partners/mastercard.png",
-      alt: "Mastercard Foundation Logo"
     }
   ];
 

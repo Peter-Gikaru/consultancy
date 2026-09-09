@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ShieldAlert, Globe2, Layers, CheckCircle2, ArrowRight } from 'lucide-react';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 import ScrollReveal from '@/components/ScrollReveal';
 import RadialGaugeMetric from '@/components/RadialGaugeMetric';
 
@@ -191,6 +192,91 @@ export default function TrackRecordPage() {
               </div>
             </ScrollReveal>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Authentic Field Sector Showcase */}
+      <section className="section" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+          <ScrollReveal direction="up" delay={0}>
+            <div style={{ marginBottom: '36px' }}>
+              <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-amber-hover)' }}>
+                Fieldwork &amp; Mandates
+              </span>
+              <h2 style={{ fontSize: '2.2rem', marginTop: '4px', marginBottom: '8px' }}>
+                Authentic Sector Engagements
+              </h2>
+              <p style={{ color: 'var(--slate-600)', fontSize: '1.05rem', maxWidth: '750px', margin: 0 }}>
+                Real documentation from smallholder value chains in Western Kenya, pastoral resilience in the Horn of Africa, dairy data audits, and high-frequency survey enumerations.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '28px'
+          }}>
+            <ScrollReveal direction="up" delay={100}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/climate-project.jpg')}
+                    alt="Pastoralist communities and livestock resilience in the Horn of Africa"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h4 style={{ fontSize: '1.15rem', color: 'var(--primary)', marginBottom: '8px' }}>
+                    Pastoralist Risk Transfer &amp; Resilience
+                  </h4>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Monitoring livestock drought risk financing, water points, and de-risking mechanisms across Northern Kenya and Somalia.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={200}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/expertise-collage.jpg')}
+                    alt="Smallholder cassava farmer Caroline Oyier in Western Kenya"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h4 style={{ fontSize: '1.15rem', color: 'var(--primary)', marginBottom: '8px' }}>
+                    Cassava &amp; Crop Value Chain Evaluation
+                  </h4>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Final evaluation assessing market integration, processing margins, and household income effects for smallholder farmers.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={300}>
+              <div className="card" style={{ padding: 0, overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/field-enumerator-survey.jpg')}
+                    alt="Field enumerator conducting mobile survey in Kenya"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+                <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h4 style={{ fontSize: '1.15rem', color: 'var(--primary)', marginBottom: '8px' }}>
+                    Real-Time Field Data Quality Audits
+                  </h4>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--slate-600)', lineHeight: '1.6', margin: 0 }}>
+                    Mobile CAPI data collection with automated 24-hour anomaly routines, GPS geo-stamping, and supervisory back-checks.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

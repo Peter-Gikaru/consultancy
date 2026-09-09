@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { BookOpen, Clock, Tag, ArrowRight, X, ShieldCheck, User, Calendar, CheckCircle2 } from 'lucide-react';
 import { siteData } from '@/config/siteData';
+import { getImageUrl } from '@/utils/getImageUrl';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export default function InsightsPage() {
@@ -17,6 +18,8 @@ export default function InsightsPage() {
       category: "Evaluation Methods",
       date: "August 2026",
       readTime: "6 min read",
+      image: "/images/stata-econometric-regression.png",
+      imageCaption: "Econometric regression analysis, counterfactual estimation, and discontinuity design in Stata.",
       content: [
         {
           heading: "The Challenge of Non-Experimental Counterfactuals",
@@ -50,6 +53,8 @@ export default function InsightsPage() {
       category: "Data Integrity",
       date: "August 2026",
       readTime: "5 min read",
+      image: "/images/field-enumerator-survey.jpg",
+      imageCaption: "Active enumerator data collection, GPS verification, and real-time field data auditing in Kenya.",
       content: [
         {
           heading: "Beyond Basic Cleaning: High-Frequency Data Auditing",
@@ -87,6 +92,8 @@ export default function InsightsPage() {
       category: "Public Opinion",
       date: "August 2026",
       readTime: "7 min read",
+      image: "/images/hero-kenya.jpg",
+      imageCaption: "Rigorous sampling frame design and demographic weighting against KNBS census benchmarks.",
       content: [
         {
           heading: "Telephone Survey Sampling Dynamics in East Africa",
@@ -175,28 +182,41 @@ export default function InsightsPage() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     height: '100%',
-                    padding: '32px',
+                    padding: 0,
+                    overflow: 'hidden',
                     cursor: 'pointer'
                   }}
                   onClick={() => handleOpenArticle(article.id)}
                 >
                   <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                      <span className="badge badge-amber">
-                        <Tag size={12} /> {article.category}
-                      </span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--text-subtle)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                        <Clock size={12} /> {article.readTime}
-                      </span>
+                    {articleDetails[article.id]?.image && (
+                      <div style={{ height: '180px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-light)' }}>
+                        <img
+                          src={getImageUrl(articleDetails[article.id].image)}
+                          alt={article.title}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      </div>
+                    )}
+                    
+                    <div style={{ padding: '24px 28px 12px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                        <span className="badge badge-amber">
+                          <Tag size={12} /> {article.category}
+                        </span>
+                        <span style={{ fontSize: '0.825rem', color: 'var(--text-subtle)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                          <Clock size={12} /> {article.readTime}
+                        </span>
+                      </div>
+
+                      <h2 style={{ fontSize: '1.35rem', marginBottom: '12px', lineHeight: '1.35' }}>
+                        {article.title}
+                      </h2>
+
+                      <p style={{ fontSize: '0.975rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '16px' }}>
+                        {article.summary}
+                      </p>
                     </div>
-
-                    <h2 style={{ fontSize: '1.35rem', marginBottom: '12px', lineHeight: '1.35' }}>
-                      {article.title}
-                    </h2>
-
-                    <p style={{ fontSize: '0.975rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '24px' }}>
-                      {article.summary}
-                    </p>
                   </div>
 
                   <div style={{
@@ -314,6 +334,16 @@ export default function InsightsPage() {
                 <User size={16} /> {selectedArticle.author}
               </div>
             </div>
+
+            {selectedArticle.image && (
+              <div style={{ marginBottom: '28px', borderRadius: '14px', overflow: 'hidden', border: '1px solid var(--slate-200)' }}>
+                <img
+                  src={getImageUrl(selectedArticle.image)}
+                  alt={selectedArticle.title}
+                  style={{ width: '100%', maxHeight: '340px', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            )}
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--slate-200)', margin: '24px 0' }} />
 

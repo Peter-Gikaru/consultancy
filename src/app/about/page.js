@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Download, ShieldCheck, CheckCircle2, User, Award, BookOpen, Building2 } from 'lucide-react';
+import { Download, ShieldCheck, CheckCircle2, User, Award, BookOpen, Building2, MapPin, Globe, Check } from 'lucide-react';
 import { siteData } from '@/config/siteData';
 import { siteSettingsStore } from '@/utils/siteSettingsStore';
+import { getImageUrl } from '@/utils/getImageUrl';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export default function AboutPage() {
@@ -54,7 +55,7 @@ export default function AboutPage() {
 
       <section className="section" style={{ backgroundColor: 'var(--bg-canvas)' }}>
         <div className="container">
-          <div className="grid-2" style={{ gap: '48px' }}>
+          <div className="grid-2" style={{ gap: '48px', alignItems: 'start' }}>
             
             <ScrollReveal direction="up" delay={100}>
               <div className="card">
@@ -85,6 +86,15 @@ export default function AboutPage() {
                     {p}
                   </p>
                 ))}
+                
+                {/* Authentic Kenyan Field Verification Photo */}
+                <div style={{ marginTop: '20px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--slate-200)' }}>
+                  <img
+                    src={getImageUrl('/images/hero-kenya.jpg')}
+                    alt="Kenyan agricultural development and field evaluation protocol in Gilgil, Kenya"
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
               </div>
             </ScrollReveal>
 
@@ -94,42 +104,89 @@ export default function AboutPage() {
 
       <section className="section" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
-          <ScrollReveal direction="up" delay={100}>
-            <div style={{ maxWidth: '860px' }}>
-              <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-amber-hover)' }}>
-                Leadership
-              </span>
-              <h2 style={{ fontSize: '2.4rem', marginTop: '6px', marginBottom: '8px' }}>
-                Our Lead Consultant
-              </h2>
-              <div style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-main)', marginBottom: '4px' }}>
-                {aboutConfig.leadConsultant.name}
-              </div>
-              <div style={{ fontSize: '0.95rem', color: 'var(--text-subtle)', marginBottom: '28px', fontWeight: '500' }}>
-                {aboutConfig.leadConsultant.title}
-              </div>
-
-              <div style={{ borderLeft: '3px solid var(--accent-amber)', paddingLeft: '24px', marginBottom: '32px' }}>
-                {aboutConfig.leadConsultant.bio.map((paragraph, idx) => (
-                  <p key={idx} style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '16px' }}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
+            
+            <ScrollReveal direction="up" delay={100}>
               <div>
-                <a
-                  href={settings.cvUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-gold-primary"
-                  style={{ gap: '10px' }}
-                >
-                  <Download size={18} /> Download Full CV (PDF)
-                </a>
+                <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700', color: 'var(--accent-amber-hover)' }}>
+                  Leadership
+                </span>
+                <h2 style={{ fontSize: '2.4rem', marginTop: '6px', marginBottom: '8px' }}>
+                  Our Lead Consultant
+                </h2>
+                <div style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-main)', marginBottom: '4px' }}>
+                  {aboutConfig.leadConsultant.name}
+                </div>
+                <div style={{ fontSize: '0.95rem', color: 'var(--text-subtle)', marginBottom: '28px', fontWeight: '500' }}>
+                  {aboutConfig.leadConsultant.title}
+                </div>
+
+                <div style={{ borderLeft: '3px solid var(--accent-amber)', paddingLeft: '24px', marginBottom: '32px' }}>
+                  {aboutConfig.leadConsultant.bio.map((paragraph, idx) => (
+                    <p key={idx} style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '16px' }}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                <div>
+                  <a
+                    href={settings.cvUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-gold-primary"
+                    style={{ gap: '10px' }}
+                  >
+                    <Download size={18} /> Download Full CV (PDF)
+                  </a>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+
+            {/* Nairobi Headquarters & Credentials Card */}
+            <ScrollReveal direction="up" delay={200}>
+              <div style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                border: '1px solid var(--slate-200)',
+                backgroundColor: '#FFFFFF',
+                boxShadow: '0 15px 35px rgba(0, 0, 0, 0.06)'
+              }}>
+                <div style={{ height: '240px', position: 'relative', overflow: 'hidden' }}>
+                  <img
+                    src={getImageUrl('/images/contact-hero.jpg')}
+                    alt="Nairobi Central Business District skyline from KICC"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+
+                <div style={{ padding: '24px' }}>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--primary)', marginBottom: '12px' }}>
+                    Institutional Evaluation Track Record
+                  </h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem', color: 'var(--slate-600)' }}>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <Check size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span><strong>OECD / PARIS21:</strong> Pooled Time-Series Cross-Sectional Impact Design (Paris)</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <Check size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span><strong>African Union:</strong> 9-Country Ecological &amp; Organic Agriculture Evaluation</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <Check size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span><strong>World Bank DRIVE:</strong> Pastoralist De-Risking in Horn of Africa</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <Check size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span><strong>Equity Group Foundation:</strong> Former Head of M&amp;E (6 national programs)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+          </div>
         </div>
       </section>
 
